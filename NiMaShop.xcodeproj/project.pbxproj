@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C0315F71C045F24008058AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0315F61C045F24008058AB /* main.m */; };
+		9C0315FA1C045F24008058AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0315F91C045F24008058AB /* AppDelegate.m */; };
+		9C0315FD1C045F24008058AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0315FC1C045F24008058AB /* ViewController.m */; };
+		9C0316001C045F24008058AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0315FE1C045F24008058AB /* Main.storyboard */; };
+		9C0316031C045F24008058AB /* NiMaShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C0316011C045F24008058AB /* NiMaShop.xcdatamodeld */; };
+		9C0316051C045F24008058AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0316041C045F24008058AB /* Assets.xcassets */; };
+		9C0316081C045F24008058AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0316061C045F24008058AB /* LaunchScreen.storyboard */; };
+		9C0316141C046279008058AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C0316161C046279008058AB /* Localizable.strings */; };
+		9C03161D1C046361008058AB /* StageStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C03161C1C046361008058AB /* StageStart.m */; };
+		9C032E0F1C06CA57007E0AF7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C032E0C1C06CA57007E0AF7 /* FBSDKCoreKit.framework */; };
+		9C032E101C06CA57007E0AF7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C032E0D1C06CA57007E0AF7 /* FBSDKLoginKit.framework */; };
+		9C032E111C06CA57007E0AF7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C032E0E1C06CA57007E0AF7 /* FBSDKShareKit.framework */; };
+		9C032E141C06D6D0007E0AF7 /* StageRegist.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C032E131C06D6D0007E0AF7 /* StageRegist.m */; };
+		9C032E171C06D6E2007E0AF7 /* StageLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C032E161C06D6E2007E0AF7 /* StageLogin.m */; };
+		9C032E1A1C06DF80007E0AF7 /* StageCheckUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C032E191C06DF80007E0AF7 /* StageCheckUser.m */; };
+		9C04FA461C0591050057C7DF /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C04FA451C0591050057C7DF /* Global.m */; };
+		9C04FA4D1C05BB520057C7DF /* StageInto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C04FA4C1C05BB520057C7DF /* StageInto.m */; };
+		9C0898F21C0834DB003CA28E /* NavigationMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898EF1C0834DB003CA28E /* NavigationMenuController.m */; };
+		9C0898F31C0834DB003CA28E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898F11C0834DB003CA28E /* SWRevealViewController.m */; };
+		9C0898F61C08351A003CA28E /* StageFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898F51C08351A003CA28E /* StageFree.m */; };
+		9C0898F91C08352C003CA28E /* StageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898F81C08352C003CA28E /* StageStore.m */; };
+		9C0898FE1C085A1B003CA28E /* StageMakeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898FD1C085A1B003CA28E /* StageMakeTable.m */; };
+		9C0899011C085A2A003CA28E /* StageSizeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0899001C085A2A003CA28E /* StageSizeTable.m */; };
+		9C0899061C085B43003CA28E /* StageCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0899051C085B43003CA28E /* StageCart.m */; };
+		9C0899091C085B54003CA28E /* StageHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0899081C085B54003CA28E /* StageHistory.m */; };
+		9C0899101C08610E003CA28E /* StageBooking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08990F1C08610E003CA28E /* StageBooking.m */; };
+		9C099A421C17CF0600F40CC9 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C099A411C17CF0600F40CC9 /* ItemCell.m */; };
+		9C099A451C17CF3000F40CC9 /* ItemStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C099A441C17CF3000F40CC9 /* ItemStickView.m */; };
+		9C099A481C17D80400F40CC9 /* TestStickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C099A471C17D80400F40CC9 /* TestStickViewController.m */; };
+		9C1A90541C0BEC4300380566 /* StageAgree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A90531C0BEC4300380566 /* StageAgree.m */; };
+		9C2E4A451C1AA0EB001BD308 /* StageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A3C1C1AA0EB001BD308 /* StageBase.m */; };
+		9C2E4A461C1AA0EB001BD308 /* StageSlideBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A3E1C1AA0EB001BD308 /* StageSlideBase.m */; };
+		9C2E4A471C1AA0EB001BD308 /* StoreCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A401C1AA0EB001BD308 /* StoreCore.m */; };
+		9C2E4A481C1AA0EB001BD308 /* Test01.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A421C1AA0EB001BD308 /* Test01.m */; };
+		9C2E4A491C1AA0EB001BD308 /* Test02.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A441C1AA0EB001BD308 /* Test02.m */; };
+		9C4CFAF41C0705F5008810CB /* StageShopIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CFAF31C0705F5008810CB /* StageShopIndex.m */; };
+		9CFFCF241C1139A00022CCE2 /* FacebookLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF191C1139A00022CCE2 /* FacebookLink.m */; };
+		9CFFCF251C1139A00022CCE2 /* ServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF1C1C1139A00022CCE2 /* ServerSocket.m */; };
+		9CFFCF261C1139A00022CCE2 /* Socket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF1E1C1139A00022CCE2 /* Socket.m */; };
+		9CFFCF271C1139A00022CCE2 /* SocketLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF201C1139A00022CCE2 /* SocketLib.m */; };
+		9CFFCF281C1139A00022CCE2 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF231C1139A00022CCE2 /* WebService.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9C032E051C06C646007E0AF7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9C0315F21C045F24008058AB /* NiMaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiMaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0315F61C045F24008058AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C0315F81C045F24008058AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C0315F91C045F24008058AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C0315FB1C045F24008058AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9C0315FC1C045F24008058AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C0315FF1C045F24008058AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C0316021C045F24008058AB /* NiMaShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NiMaShop.xcdatamodel; sourceTree = "<group>"; };
+		9C0316041C045F24008058AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C0316071C045F24008058AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C0316091C045F24008058AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C0316151C046279008058AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C0316171C0462B8008058AB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9C0316181C0462C1008058AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9C03161B1C046361008058AB /* StageStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageStart.h; path = stage_login/StageStart.h; sourceTree = "<group>"; };
+		9C03161C1C046361008058AB /* StageStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageStart.m; path = stage_login/StageStart.m; sourceTree = "<group>"; };
+		9C032E0C1C06CA57007E0AF7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = 3rd/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		9C032E0D1C06CA57007E0AF7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = 3rd/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		9C032E0E1C06CA57007E0AF7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = 3rd/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		9C032E121C06D6D0007E0AF7 /* StageRegist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageRegist.h; path = stage_login/StageRegist.h; sourceTree = "<group>"; };
+		9C032E131C06D6D0007E0AF7 /* StageRegist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageRegist.m; path = stage_login/StageRegist.m; sourceTree = "<group>"; };
+		9C032E151C06D6E2007E0AF7 /* StageLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageLogin.h; path = stage_login/StageLogin.h; sourceTree = "<group>"; };
+		9C032E161C06D6E2007E0AF7 /* StageLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageLogin.m; path = stage_login/StageLogin.m; sourceTree = "<group>"; };
+		9C032E181C06DF80007E0AF7 /* StageCheckUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageCheckUser.h; path = stage_login/StageCheckUser.h; sourceTree = "<group>"; };
+		9C032E191C06DF80007E0AF7 /* StageCheckUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageCheckUser.m; path = stage_login/StageCheckUser.m; sourceTree = "<group>"; };
+		9C04FA441C0591050057C7DF /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Global.h; path = global/Global.h; sourceTree = "<group>"; };
+		9C04FA451C0591050057C7DF /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Global.m; path = global/Global.m; sourceTree = "<group>"; };
+		9C04FA471C0592450057C7DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C04FA4B1C05BB520057C7DF /* StageInto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageInto.h; path = stage_login/StageInto.h; sourceTree = "<group>"; };
+		9C04FA4C1C05BB520057C7DF /* StageInto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageInto.m; path = stage_login/StageInto.m; sourceTree = "<group>"; };
+		9C0898EE1C0834DB003CA28E /* NavigationMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationMenuController.h; path = NiMaShop/slide_menu/NavigationMenuController.h; sourceTree = SOURCE_ROOT; };
+		9C0898EF1C0834DB003CA28E /* NavigationMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationMenuController.m; path = NiMaShop/slide_menu/NavigationMenuController.m; sourceTree = SOURCE_ROOT; };
+		9C0898F01C0834DB003CA28E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = NiMaShop/slide_menu/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
+		9C0898F11C0834DB003CA28E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = NiMaShop/slide_menu/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
+		9C0898F41C08351A003CA28E /* StageFree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageFree.h; sourceTree = "<group>"; };
+		9C0898F51C08351A003CA28E /* StageFree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageFree.m; sourceTree = "<group>"; };
+		9C0898F71C08352C003CA28E /* StageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageStore.h; sourceTree = "<group>"; };
+		9C0898F81C08352C003CA28E /* StageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageStore.m; sourceTree = "<group>"; };
+		9C0898FC1C085A1B003CA28E /* StageMakeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageMakeTable.h; sourceTree = "<group>"; };
+		9C0898FD1C085A1B003CA28E /* StageMakeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageMakeTable.m; sourceTree = "<group>"; };
+		9C0898FF1C085A2A003CA28E /* StageSizeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSizeTable.h; sourceTree = "<group>"; };
+		9C0899001C085A2A003CA28E /* StageSizeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSizeTable.m; sourceTree = "<group>"; };
+		9C0899041C085B43003CA28E /* StageCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageCart.h; sourceTree = "<group>"; };
+		9C0899051C085B43003CA28E /* StageCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageCart.m; sourceTree = "<group>"; };
+		9C0899071C085B54003CA28E /* StageHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageHistory.h; sourceTree = "<group>"; };
+		9C0899081C085B54003CA28E /* StageHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageHistory.m; sourceTree = "<group>"; };
+		9C08990E1C08610E003CA28E /* StageBooking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageBooking.h; sourceTree = "<group>"; };
+		9C08990F1C08610E003CA28E /* StageBooking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageBooking.m; sourceTree = "<group>"; };
+		9C099A401C17CF0600F40CC9 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		9C099A411C17CF0600F40CC9 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		9C099A431C17CF3000F40CC9 /* ItemStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStickView.h; sourceTree = "<group>"; };
+		9C099A441C17CF3000F40CC9 /* ItemStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStickView.m; sourceTree = "<group>"; };
+		9C099A461C17D80400F40CC9 /* TestStickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStickViewController.h; sourceTree = "<group>"; };
+		9C099A471C17D80400F40CC9 /* TestStickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStickViewController.m; sourceTree = "<group>"; };
+		9C1A90521C0BEC4300380566 /* StageAgree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageAgree.h; path = stage_login/StageAgree.h; sourceTree = "<group>"; };
+		9C1A90531C0BEC4300380566 /* StageAgree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageAgree.m; path = stage_login/StageAgree.m; sourceTree = "<group>"; };
+		9C2E4A3B1C1AA0EB001BD308 /* StageBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageBase.h; sourceTree = "<group>"; };
+		9C2E4A3C1C1AA0EB001BD308 /* StageBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageBase.m; sourceTree = "<group>"; };
+		9C2E4A3D1C1AA0EB001BD308 /* StageSlideBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSlideBase.h; sourceTree = "<group>"; };
+		9C2E4A3E1C1AA0EB001BD308 /* StageSlideBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSlideBase.m; sourceTree = "<group>"; };
+		9C2E4A3F1C1AA0EB001BD308 /* StoreCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreCore.h; sourceTree = "<group>"; };
+		9C2E4A401C1AA0EB001BD308 /* StoreCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreCore.m; sourceTree = "<group>"; };
+		9C2E4A411C1AA0EB001BD308 /* Test01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test01.h; sourceTree = "<group>"; };
+		9C2E4A421C1AA0EB001BD308 /* Test01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test01.m; sourceTree = "<group>"; };
+		9C2E4A431C1AA0EB001BD308 /* Test02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test02.h; sourceTree = "<group>"; };
+		9C2E4A441C1AA0EB001BD308 /* Test02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test02.m; sourceTree = "<group>"; };
+		9C4CFAF21C0705F5008810CB /* StageShopIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageShopIndex.h; path = stage_login/StageShopIndex.h; sourceTree = "<group>"; };
+		9C4CFAF31C0705F5008810CB /* StageShopIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageShopIndex.m; path = stage_login/StageShopIndex.m; sourceTree = "<group>"; };
+		9CFFCF181C1139A00022CCE2 /* FacebookLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLink.h; sourceTree = "<group>"; };
+		9CFFCF191C1139A00022CCE2 /* FacebookLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLink.m; sourceTree = "<group>"; };
+		9CFFCF1B1C1139A00022CCE2 /* ServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerSocket.h; sourceTree = "<group>"; };
+		9CFFCF1C1C1139A00022CCE2 /* ServerSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerSocket.m; sourceTree = "<group>"; };
+		9CFFCF1D1C1139A00022CCE2 /* Socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Socket.h; sourceTree = "<group>"; };
+		9CFFCF1E1C1139A00022CCE2 /* Socket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Socket.m; sourceTree = "<group>"; };
+		9CFFCF1F1C1139A00022CCE2 /* SocketLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketLib.h; sourceTree = "<group>"; };
+		9CFFCF201C1139A00022CCE2 /* SocketLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketLib.m; sourceTree = "<group>"; };
+		9CFFCF211C1139A00022CCE2 /* SocketLibDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketLibDelegate.h; sourceTree = "<group>"; };
+		9CFFCF221C1139A00022CCE2 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
+		9CFFCF231C1139A00022CCE2 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C0315EF1C045F24008058AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C032E101C06CA57007E0AF7 /* FBSDKLoginKit.framework in Frameworks */,
+				9C032E0F1C06CA57007E0AF7 /* FBSDKCoreKit.framework in Frameworks */,
+				9C032E111C06CA57007E0AF7 /* FBSDKShareKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C0315E91C045F24008058AB = {
+			isa = PBXGroup;
+			children = (
+				9C032C1F1C06AF95007E0AF7 /* 3rd */,
+				9C03160F1C046196008058AB /* language */,
+				9C0315F41C045F24008058AB /* NiMaShop */,
+				9C0315F31C045F24008058AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C0315F31C045F24008058AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C0315F21C045F24008058AB /* NiMaShop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C0315F41C045F24008058AB /* NiMaShop */ = {
+			isa = PBXGroup;
+			children = (
+				9C0315F81C045F24008058AB /* AppDelegate.h */,
+				9C0315F91C045F24008058AB /* AppDelegate.m */,
+				9C0315FB1C045F24008058AB /* ViewController.h */,
+				9C0315FC1C045F24008058AB /* ViewController.m */,
+				9C0315FE1C045F24008058AB /* Main.storyboard */,
+				9C0316041C045F24008058AB /* Assets.xcassets */,
+				9C0316061C045F24008058AB /* LaunchScreen.storyboard */,
+				9C0316091C045F24008058AB /* Info.plist */,
+				9C0316011C045F24008058AB /* NiMaShop.xcdatamodeld */,
+				9C099A3F1C17CF0600F40CC9 /* component */,
+				9CFFCF171C1139A00022CCE2 /* network */,
+				9C08990D1C0860F1003CA28E /* stage_booking */,
+				9C0899021C085B2B003CA28E /* stage_cart */,
+				9C0899031C085B2B003CA28E /* stage_history */,
+				9C0898FA1C085A07003CA28E /* stage_make_table */,
+				9C0898FB1C085A07003CA28E /* stage_size_table */,
+				9C0898EC1C083494003CA28E /* stage_free */,
+				9C0898ED1C083494003CA28E /* stage_store */,
+				9C0898E01C080021003CA28E /* slide_menu */,
+				9C03161A1C0462E3008058AB /* stage_login */,
+				9C0316191C0462CF008058AB /* global */,
+				9C0315F51C045F24008058AB /* Supporting Files */,
+			);
+			path = NiMaShop;
+			sourceTree = "<group>";
+		};
+		9C0315F51C045F24008058AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C0315F61C045F24008058AB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C03160F1C046196008058AB /* language */ = {
+			isa = PBXGroup;
+			children = (
+				9C0316161C046279008058AB /* Localizable.strings */,
+			);
+			name = language;
+			sourceTree = "<group>";
+		};
+		9C0316191C0462CF008058AB /* global */ = {
+			isa = PBXGroup;
+			children = (
+				9C04FA441C0591050057C7DF /* Global.h */,
+				9C04FA451C0591050057C7DF /* Global.m */,
+			);
+			name = global;
+			sourceTree = "<group>";
+		};
+		9C03161A1C0462E3008058AB /* stage_login */ = {
+			isa = PBXGroup;
+			children = (
+				9C03161B1C046361008058AB /* StageStart.h */,
+				9C03161C1C046361008058AB /* StageStart.m */,
+				9C04FA4B1C05BB520057C7DF /* StageInto.h */,
+				9C04FA4C1C05BB520057C7DF /* StageInto.m */,
+				9C032E121C06D6D0007E0AF7 /* StageRegist.h */,
+				9C032E131C06D6D0007E0AF7 /* StageRegist.m */,
+				9C032E151C06D6E2007E0AF7 /* StageLogin.h */,
+				9C032E161C06D6E2007E0AF7 /* StageLogin.m */,
+				9C032E181C06DF80007E0AF7 /* StageCheckUser.h */,
+				9C032E191C06DF80007E0AF7 /* StageCheckUser.m */,
+				9C4CFAF21C0705F5008810CB /* StageShopIndex.h */,
+				9C4CFAF31C0705F5008810CB /* StageShopIndex.m */,
+				9C1A90521C0BEC4300380566 /* StageAgree.h */,
+				9C1A90531C0BEC4300380566 /* StageAgree.m */,
+			);
+			name = stage_login;
+			sourceTree = "<group>";
+		};
+		9C032C1F1C06AF95007E0AF7 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				9C032E0C1C06CA57007E0AF7 /* FBSDKCoreKit.framework */,
+				9C032E0D1C06CA57007E0AF7 /* FBSDKLoginKit.framework */,
+				9C032E0E1C06CA57007E0AF7 /* FBSDKShareKit.framework */,
+			);
+			name = 3rd;
+			sourceTree = "<group>";
+		};
+		9C0898E01C080021003CA28E /* slide_menu */ = {
+			isa = PBXGroup;
+			children = (
+				9C0898EE1C0834DB003CA28E /* NavigationMenuController.h */,
+				9C0898EF1C0834DB003CA28E /* NavigationMenuController.m */,
+				9C0898F01C0834DB003CA28E /* SWRevealViewController.h */,
+				9C0898F11C0834DB003CA28E /* SWRevealViewController.m */,
+			);
+			name = slide_menu;
+			path = slideout_menu;
+			sourceTree = "<group>";
+		};
+		9C0898EC1C083494003CA28E /* stage_free */ = {
+			isa = PBXGroup;
+			children = (
+				9C0898F41C08351A003CA28E /* StageFree.h */,
+				9C0898F51C08351A003CA28E /* StageFree.m */,
+			);
+			path = stage_free;
+			sourceTree = "<group>";
+		};
+		9C0898ED1C083494003CA28E /* stage_store */ = {
+			isa = PBXGroup;
+			children = (
+				9C0898F71C08352C003CA28E /* StageStore.h */,
+				9C0898F81C08352C003CA28E /* StageStore.m */,
+			);
+			path = stage_store;
+			sourceTree = "<group>";
+		};
+		9C0898FA1C085A07003CA28E /* stage_make_table */ = {
+			isa = PBXGroup;
+			children = (
+				9C0898FC1C085A1B003CA28E /* StageMakeTable.h */,
+				9C0898FD1C085A1B003CA28E /* StageMakeTable.m */,
+			);
+			path = stage_make_table;
+			sourceTree = "<group>";
+		};
+		9C0898FB1C085A07003CA28E /* stage_size_table */ = {
+			isa = PBXGroup;
+			children = (
+				9C0898FF1C085A2A003CA28E /* StageSizeTable.h */,
+				9C0899001C085A2A003CA28E /* StageSizeTable.m */,
+			);
+			path = stage_size_table;
+			sourceTree = "<group>";
+		};
+		9C0899021C085B2B003CA28E /* stage_cart */ = {
+			isa = PBXGroup;
+			children = (
+				9C0899041C085B43003CA28E /* StageCart.h */,
+				9C0899051C085B43003CA28E /* StageCart.m */,
+			);
+			path = stage_cart;
+			sourceTree = "<group>";
+		};
+		9C0899031C085B2B003CA28E /* stage_history */ = {
+			isa = PBXGroup;
+			children = (
+				9C0899071C085B54003CA28E /* StageHistory.h */,
+				9C0899081C085B54003CA28E /* StageHistory.m */,
+			);
+			path = stage_history;
+			sourceTree = "<group>";
+		};
+		9C08990D1C0860F1003CA28E /* stage_booking */ = {
+			isa = PBXGroup;
+			children = (
+				9C08990E1C08610E003CA28E /* StageBooking.h */,
+				9C08990F1C08610E003CA28E /* StageBooking.m */,
+			);
+			path = stage_booking;
+			sourceTree = "<group>";
+		};
+		9C099A3F1C17CF0600F40CC9 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				9C2E4A3B1C1AA0EB001BD308 /* StageBase.h */,
+				9C2E4A3C1C1AA0EB001BD308 /* StageBase.m */,
+				9C2E4A3D1C1AA0EB001BD308 /* StageSlideBase.h */,
+				9C2E4A3E1C1AA0EB001BD308 /* StageSlideBase.m */,
+				9C2E4A3F1C1AA0EB001BD308 /* StoreCore.h */,
+				9C2E4A401C1AA0EB001BD308 /* StoreCore.m */,
+				9C2E4A411C1AA0EB001BD308 /* Test01.h */,
+				9C2E4A421C1AA0EB001BD308 /* Test01.m */,
+				9C2E4A431C1AA0EB001BD308 /* Test02.h */,
+				9C2E4A441C1AA0EB001BD308 /* Test02.m */,
+				9C099A401C17CF0600F40CC9 /* ItemCell.h */,
+				9C099A411C17CF0600F40CC9 /* ItemCell.m */,
+				9C099A431C17CF3000F40CC9 /* ItemStickView.h */,
+				9C099A441C17CF3000F40CC9 /* ItemStickView.m */,
+				9C099A461C17D80400F40CC9 /* TestStickViewController.h */,
+				9C099A471C17D80400F40CC9 /* TestStickViewController.m */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		9CFFCF171C1139A00022CCE2 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				9CFFCF181C1139A00022CCE2 /* FacebookLink.h */,
+				9CFFCF191C1139A00022CCE2 /* FacebookLink.m */,
+				9CFFCF1A1C1139A00022CCE2 /* ScocketLib */,
+				9CFFCF221C1139A00022CCE2 /* WebService.h */,
+				9CFFCF231C1139A00022CCE2 /* WebService.m */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		9CFFCF1A1C1139A00022CCE2 /* ScocketLib */ = {
+			isa = PBXGroup;
+			children = (
+				9CFFCF1B1C1139A00022CCE2 /* ServerSocket.h */,
+				9CFFCF1C1C1139A00022CCE2 /* ServerSocket.m */,
+				9CFFCF1D1C1139A00022CCE2 /* Socket.h */,
+				9CFFCF1E1C1139A00022CCE2 /* Socket.m */,
+				9CFFCF1F1C1139A00022CCE2 /* SocketLib.h */,
+				9CFFCF201C1139A00022CCE2 /* SocketLib.m */,
+				9CFFCF211C1139A00022CCE2 /* SocketLibDelegate.h */,
+			);
+			path = ScocketLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C0315F11C045F24008058AB /* NiMaShop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C03160C1C045F24008058AB /* Build configuration list for PBXNativeTarget "NiMaShop" */;
+			buildPhases = (
+				9C0315EE1C045F24008058AB /* Sources */,
+				9C0315EF1C045F24008058AB /* Frameworks */,
+				9C0315F01C045F24008058AB /* Resources */,
+				9C032E051C06C646007E0AF7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NiMaShop;
+			productName = NiMaShop;
+			productReference = 9C0315F21C045F24008058AB /* NiMaShop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C0315EA1C045F24008058AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = RogerChen;
+				TargetAttributes = {
+					9C0315F11C045F24008058AB = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 77T4A94KLM;
+					};
+				};
+			};
+			buildConfigurationList = 9C0315ED1C045F24008058AB /* Build configuration list for PBXProject "NiMaShop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hant",
+				"zh-Hans",
+				ja,
+			);
+			mainGroup = 9C0315E91C045F24008058AB;
+			productRefGroup = 9C0315F31C045F24008058AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C0315F11C045F24008058AB /* NiMaShop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C0315F01C045F24008058AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C0316081C045F24008058AB /* LaunchScreen.storyboard in Resources */,
+				9C0316141C046279008058AB /* Localizable.strings in Resources */,
+				9C0316051C045F24008058AB /* Assets.xcassets in Resources */,
+				9C0316001C045F24008058AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C0315EE1C045F24008058AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C0899061C085B43003CA28E /* StageCart.m in Sources */,
+				9C0899011C085A2A003CA28E /* StageSizeTable.m in Sources */,
+				9CFFCF281C1139A00022CCE2 /* WebService.m in Sources */,
+				9CFFCF261C1139A00022CCE2 /* Socket.m in Sources */,
+				9C032E141C06D6D0007E0AF7 /* StageRegist.m in Sources */,
+				9CFFCF271C1139A00022CCE2 /* SocketLib.m in Sources */,
+				9C1A90541C0BEC4300380566 /* StageAgree.m in Sources */,
+				9CFFCF241C1139A00022CCE2 /* FacebookLink.m in Sources */,
+				9C099A421C17CF0600F40CC9 /* ItemCell.m in Sources */,
+				9C2E4A451C1AA0EB001BD308 /* StageBase.m in Sources */,
+				9CFFCF251C1139A00022CCE2 /* ServerSocket.m in Sources */,
+				9C0898F31C0834DB003CA28E /* SWRevealViewController.m in Sources */,
+				9C0898F91C08352C003CA28E /* StageStore.m in Sources */,
+				9C2E4A481C1AA0EB001BD308 /* Test01.m in Sources */,
+				9C04FA461C0591050057C7DF /* Global.m in Sources */,
+				9C099A481C17D80400F40CC9 /* TestStickViewController.m in Sources */,
+				9C0316031C045F24008058AB /* NiMaShop.xcdatamodeld in Sources */,
+				9C032E1A1C06DF80007E0AF7 /* StageCheckUser.m in Sources */,
+				9C2E4A461C1AA0EB001BD308 /* StageSlideBase.m in Sources */,
+				9C099A451C17CF3000F40CC9 /* ItemStickView.m in Sources */,
+				9C0899101C08610E003CA28E /* StageBooking.m in Sources */,
+				9C4CFAF41C0705F5008810CB /* StageShopIndex.m in Sources */,
+				9C0898FE1C085A1B003CA28E /* StageMakeTable.m in Sources */,
+				9C03161D1C046361008058AB /* StageStart.m in Sources */,
+				9C0899091C085B54003CA28E /* StageHistory.m in Sources */,
+				9C2E4A491C1AA0EB001BD308 /* Test02.m in Sources */,
+				9C04FA4D1C05BB520057C7DF /* StageInto.m in Sources */,
+				9C032E171C06D6E2007E0AF7 /* StageLogin.m in Sources */,
+				9C0315FD1C045F24008058AB /* ViewController.m in Sources */,
+				9C0898F61C08351A003CA28E /* StageFree.m in Sources */,
+				9C2E4A471C1AA0EB001BD308 /* StoreCore.m in Sources */,
+				9C0315FA1C045F24008058AB /* AppDelegate.m in Sources */,
+				9C0898F21C0834DB003CA28E /* NavigationMenuController.m in Sources */,
+				9C0315F71C045F24008058AB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9C0315FE1C045F24008058AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C0315FF1C045F24008058AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C0316061C045F24008058AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C0316071C045F24008058AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9C0316161C046279008058AB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C0316151C046279008058AB /* Base */,
+				9C0316171C0462B8008058AB /* zh-Hant */,
+				9C0316181C0462C1008058AB /* zh-Hans */,
+				9C04FA471C0592450057C7DF /* ja */,
+			);
+			name = Localizable.strings;
+			path = language;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C03160A1C045F24008058AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ChaoWei Chen (6LJ55WN24D)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		9C03160B1C045F24008058AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ChaoWei Chen (6LJ55WN24D)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C03160D1C045F24008058AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/3rd/FacebookSDK",
+				);
+				INFOPLIST_FILE = NiMaShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RogerProject.NiMaShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C03160E1C045F24008058AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/3rd/FacebookSDK",
+				);
+				INFOPLIST_FILE = NiMaShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RogerProject.NiMaShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C0315ED1C045F24008058AB /* Build configuration list for PBXProject "NiMaShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C03160A1C045F24008058AB /* Debug */,
+				9C03160B1C045F24008058AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C03160C1C045F24008058AB /* Build configuration list for PBXNativeTarget "NiMaShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C03160D1C045F24008058AB /* Debug */,
+				9C03160E1C045F24008058AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C0316011C045F24008058AB /* NiMaShop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C0316021C045F24008058AB /* NiMaShop.xcdatamodel */,
+			);
+			currentVersion = 9C0316021C045F24008058AB /* NiMaShop.xcdatamodel */;
+			path = NiMaShop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9C0315EA1C045F24008058AB /* Project object */;
+}

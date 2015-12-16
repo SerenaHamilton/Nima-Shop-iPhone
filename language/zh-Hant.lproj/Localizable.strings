@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  NiMaShop
+
+  Created by 陳晁偉 on 2015/11/24.
+  Copyright © 2015年 RogerChen. All rights reserved.
+*/
+
+language="語言";
+
+btnRegist="註冊";
+btnLogin="登入";

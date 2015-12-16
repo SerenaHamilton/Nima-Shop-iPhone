@@ -1,0 +1,88 @@
+//
+//  StageFree.m
+//  NiMaShop
+//
+//  Created by 陳晁偉 on 2015/11/27.
+//  Copyright © 2015年 RogerChen. All rights reserved.
+//
+
+#import "StageFree.h"
+
+@interface StageFree ()
+
+@end
+
+@implementation StageFree
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self addBtn:@"icon_cam"];
+    [self addBtn:@"icon_eraser"];
+    [self addBtn:@"icon_temp"];
+    [self addBtn:@"icon_text"];
+    [self addBtn:@"icon_stamp"];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(BOOL) virtualBtnGruopClick:(UIButton *)sender
+{
+    if (sender==[listBtn objectAtIndex:1])
+        [self buttonPress:sender];
+    return false;
+}
+
+-(void) virtualCellClick:(UIImageView*)imageView
+{
+    
+}
+
+
+
+- (IBAction)buttonPress:(UIButton *)sender
+{
+    UIPopoverPresentationController *popover;
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+    // 設定相片的來源為行動裝置內的相本
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    // 設定顯示模式為 popover
+    imagePicker.modalPresentationStyle = UIModalPresentationPopover;
+    popover = imagePicker.popoverPresentationController;
+    // 設定 popover 視窗與哪一個 view 元件有關連
+    popover.sourceView = sender;
+    // 以下兩行處理 popover 的箭頭位置
+    popover.sourceRect = sender.bounds;
+    popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+    UIImage *image=[info valueForKey:UIImagePickerControllerOriginalImage];
+    UIImageView *testView=[[UIImageView alloc] initWithImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    stickerView = [[ItemStickView alloc] initWithContentView:testView];
+    stickerView.center = self.view.center;
+    stickerView.delegate = self;
+    stickerView.outlineBorderColor = [UIColor blueColor];
+    [stickerView setImage:[UIImage imageNamed:@"close"] forHandler:HandlerClose];
+    [stickerView setImage:[UIImage imageNamed:@"rotate"] forHandler:HandlerRotate];
+    [stickerView setImage:[UIImage imageNamed:@"flip"] forHandler:HandlerFlip];
+    [stickerView setHandlerSize:35];
+    stickerView.frame=CGRectMake((self.view.frame.size.width-300)/2, 100, 300, 300);
+    
+    [self.view addSubview:stickerView];
+    
+    self.selectedView = stickerView;
+    
+    
+}
+
+@end
