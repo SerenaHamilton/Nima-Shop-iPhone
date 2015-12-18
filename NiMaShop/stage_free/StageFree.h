@@ -7,9 +7,14 @@
 //
 
 #import "StoreCore.h"
+#import "LayerRemoveBackground.h"
 
 @interface StageFree : StoreCore<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     ItemStickView *stickerView;
+    UIImage *imageNowEdit;
 }
+-(void)editRemoveBackground;
 @end
+
+

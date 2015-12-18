@@ -24,6 +24,8 @@
 		9C032E1A1C06DF80007E0AF7 /* StageCheckUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C032E191C06DF80007E0AF7 /* StageCheckUser.m */; };
 		9C04FA461C0591050057C7DF /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C04FA451C0591050057C7DF /* Global.m */; };
 		9C04FA4D1C05BB520057C7DF /* StageInto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C04FA4C1C05BB520057C7DF /* StageInto.m */; };
+		9C0613F51C23DAB5005CDD62 /* LayerRemoveBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0613F31C23DAB5005CDD62 /* LayerRemoveBackground.m */; };
+		9C0613F61C23DAB5005CDD62 /* LayerRemoveBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0613F41C23DAB5005CDD62 /* LayerRemoveBackground.xib */; };
 		9C0898F21C0834DB003CA28E /* NavigationMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898EF1C0834DB003CA28E /* NavigationMenuController.m */; };
 		9C0898F31C0834DB003CA28E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898F11C0834DB003CA28E /* SWRevealViewController.m */; };
 		9C0898F61C08351A003CA28E /* StageFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0898F51C08351A003CA28E /* StageFree.m */; };
@@ -94,6 +96,9 @@
 		9C04FA471C0592450057C7DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C04FA4B1C05BB520057C7DF /* StageInto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageInto.h; path = stage_login/StageInto.h; sourceTree = "<group>"; };
 		9C04FA4C1C05BB520057C7DF /* StageInto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageInto.m; path = stage_login/StageInto.m; sourceTree = "<group>"; };
+		9C0613F21C23DAB5005CDD62 /* LayerRemoveBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerRemoveBackground.h; sourceTree = "<group>"; };
+		9C0613F31C23DAB5005CDD62 /* LayerRemoveBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerRemoveBackground.m; sourceTree = "<group>"; };
+		9C0613F41C23DAB5005CDD62 /* LayerRemoveBackground.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LayerRemoveBackground.xib; sourceTree = "<group>"; };
 		9C0898EE1C0834DB003CA28E /* NavigationMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationMenuController.h; path = NiMaShop/slide_menu/NavigationMenuController.h; sourceTree = SOURCE_ROOT; };
 		9C0898EF1C0834DB003CA28E /* NavigationMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationMenuController.m; path = NiMaShop/slide_menu/NavigationMenuController.m; sourceTree = SOURCE_ROOT; };
 		9C0898F01C0834DB003CA28E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = NiMaShop/slide_menu/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
@@ -279,6 +284,9 @@
 			children = (
 				9C0898F41C08351A003CA28E /* StageFree.h */,
 				9C0898F51C08351A003CA28E /* StageFree.m */,
+				9C0613F21C23DAB5005CDD62 /* LayerRemoveBackground.h */,
+				9C0613F31C23DAB5005CDD62 /* LayerRemoveBackground.m */,
+				9C0613F41C23DAB5005CDD62 /* LayerRemoveBackground.xib */,
 			);
 			path = stage_free;
 			sourceTree = "<group>";
@@ -450,6 +458,7 @@
 			files = (
 				9C0316081C045F24008058AB /* LaunchScreen.storyboard in Resources */,
 				9C0316141C046279008058AB /* Localizable.strings in Resources */,
+				9C0613F61C23DAB5005CDD62 /* LayerRemoveBackground.xib in Resources */,
 				9C0316051C045F24008058AB /* Assets.xcassets in Resources */,
 				9C0316001C045F24008058AB /* Main.storyboard in Resources */,
 			);
@@ -476,6 +485,7 @@
 				9C0898F31C0834DB003CA28E /* SWRevealViewController.m in Sources */,
 				9C0898F91C08352C003CA28E /* StageStore.m in Sources */,
 				9C2E4A481C1AA0EB001BD308 /* Test01.m in Sources */,
+				9C0613F51C23DAB5005CDD62 /* LayerRemoveBackground.m in Sources */,
 				9C04FA461C0591050057C7DF /* Global.m in Sources */,
 				9C099A481C17D80400F40CC9 /* TestStickViewController.m in Sources */,
 				9C0316031C045F24008058AB /* NiMaShop.xcdatamodeld in Sources */,

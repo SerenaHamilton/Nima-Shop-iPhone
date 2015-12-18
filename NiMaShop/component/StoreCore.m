@@ -88,7 +88,7 @@
     [dTheme addObject:arr];
     [btnCloth setRestorationIdentifier:@"theme0"];
     [btnCloth addTarget:self action:@selector(btnGrounpClick:) forControlEvents: UIControlEventTouchUpInside];
-    [btnCloth.imageView setFrame:CGRectMake(0, 0, 65, 65)];
+   // [btnCloth.imageView setFrame:CGRectMake(0, 0, 58  , 58)];
     [listBtn addObject:btnCloth];
     
     
@@ -212,6 +212,10 @@
 -(void) addTheme:(UIImage*)image count:(int)iNums;
 {
     
+    int iBtnW=56;
+    int iBtnH=56;
+    int iSpace=5;
+    
     NSMutableArray *arr0=[[NSMutableArray alloc]init];
     for(int i=0;i<iNums;i++)
     {
@@ -220,21 +224,24 @@
     
     [dTheme addObject:arr0];
     
-    UIButton *btnTheme=[[UIButton alloc]initWithFrame:CGRectMake((scrollBtnGroup.subviews.count-2)*65,0,60,60)];
+    UIButton *btnTheme=[[UIButton alloc]initWithFrame:CGRectMake((scrollBtnGroup.subviews.count-2)*(iBtnW+iSpace),0,iBtnW,iBtnH)];
 
     [btnTheme setImage:[[dTheme objectAtIndex:dTheme.count-1] objectAtIndex:0]    forState:UIControlStateNormal];
     [btnTheme addTarget:self action:@selector(btnGrounpClick:) forControlEvents:UIControlEventTouchUpInside];
     [btnTheme setBackgroundColor:[UIColor whiteColor]];
     [listBtn addObject:btnTheme];
     [scrollBtnGroup addSubview:btnTheme];
-    [scrollBtnGroup setContentSize:CGSizeMake((scrollBtnGroup.subviews.count-1)*65, 0)];
+    [scrollBtnGroup setContentSize:CGSizeMake((scrollBtnGroup.subviews.count-2)*(iBtnW+iSpace), 0)];
     
 }
 
 
 -(void) addBtn:(NSString*)imageName;
 {
-    UIButton *btnTheme=[[UIButton alloc]initWithFrame:CGRectMake((scrollBtnGroup.subviews.count-2)*65,0,60,60)];
+    int iBtnW=56;
+    int iBtnH=56;
+    int iSpace=5;
+    UIButton *btnTheme=[[UIButton alloc]initWithFrame:CGRectMake((scrollBtnGroup.subviews.count-2)*(iBtnW+iSpace),0,iBtnW,iBtnH)];
     UIImage *btnImage = [UIImage imageNamed:imageName];
     [btnTheme setImage:btnImage forState:UIControlStateNormal];
     [btnTheme addTarget:self action:@selector(btnGrounpClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -243,7 +250,7 @@
     
     [scrollBtnGroup addSubview:btnTheme];
 
-    [scrollBtnGroup setContentSize:CGSizeMake((scrollBtnGroup.subviews.count-1)*65, 0)];
+    [scrollBtnGroup setContentSize:CGSizeMake((scrollBtnGroup.subviews.count-2)*(iBtnW+iSpace), 0)];
     
 }
 

@@ -6,11 +6,10 @@
 //  Copyright © 2015年 RogerChen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Global.h"
+#import "StageSlideBase.h"
 
-
-@interface Test01 : UIViewController<UIScrollViewDelegate>
+@interface Test01 : StageSlideBase<UIScrollViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     UIImage *oldImage;
 }
@@ -19,9 +18,14 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtFnName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtFnValue;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnFn;
 
 - (UIImage *)imageWithChromaKeyMasking ;
-- (UIImage*) replaceColor:(UIColor*)color inImage:(UIImage*)image withTolerance:(float)tolerance ;
 
+- (UIColor*)pixelColorInImage:(UIImage*)image atX:(int)x atY:(int)y;
 
 @end

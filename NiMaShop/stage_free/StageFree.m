@@ -34,6 +34,8 @@
 {
     if (sender==[listBtn objectAtIndex:1])
         [self buttonPress:sender];
+    else if (sender==[listBtn objectAtIndex:2])
+        [self editRemoveBackground];
     return false;
 }
 
@@ -65,8 +67,8 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
-    UIImage *image=[info valueForKey:UIImagePickerControllerOriginalImage];
-    UIImageView *testView=[[UIImageView alloc] initWithImage:image];
+    imageNowEdit=[info valueForKey:UIImagePickerControllerOriginalImage];
+    UIImageView *testView=[[UIImageView alloc] initWithImage:imageNowEdit];
     [self dismissViewControllerAnimated:YES completion:nil];
     stickerView = [[ItemStickView alloc] initWithContentView:testView];
     stickerView.center = self.view.center;
@@ -77,12 +79,19 @@
     [stickerView setImage:[UIImage imageNamed:@"flip"] forHandler:HandlerFlip];
     [stickerView setHandlerSize:35];
     stickerView.frame=CGRectMake((self.view.frame.size.width-300)/2, 100, 300, 300);
-    
+
     [self.view addSubview:stickerView];
     
     self.selectedView = stickerView;
     
     
+}
+
+-(void)editRemoveBackground;
+{
+    LayerRemoveBackground *layerRm= [[LayerRemoveBackground alloc]init];
+
+    [self.view addSubview:layerRm.view];
 }
 
 @end
