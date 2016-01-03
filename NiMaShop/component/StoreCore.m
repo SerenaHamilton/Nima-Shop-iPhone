@@ -47,6 +47,15 @@
     _scrollImage.contentSize = imageView.frame.size;
     
     viewImage.hidden=false;
+    
+//        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:viewImage action:@selector(tapDetected:)];
+//        tapRecognizer.numberOfTapsRequired = 1;
+     //   [self addGestureRecognizer:tapRecognizer];
+}
+
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
+{
+    NSLog(@"A tab ");
 }
 
 - (CGSize) getImageSizeAfterAspectFit:(UIImageView *) imageView
@@ -384,6 +393,7 @@
 
 - (void)setSelectedView:(ItemStickView *)selectedView
 {
+
     if (_selectedView != selectedView)
     {
         if (_selectedView)
@@ -410,6 +420,8 @@
 {
     self.selectedView = stickerView;
 }
+
+
 
 
 - (IBAction)btnNextPress:(UIButton *)sender

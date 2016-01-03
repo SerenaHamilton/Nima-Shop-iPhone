@@ -22,13 +22,64 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    oldImage=self.image.image;
+    oldImage=self.imageView.image;
     self.scrollview.delegate=self;
-    self.image.contentMode=UIViewContentModeScaleAspectFill;
+    self.imageView.contentMode=UIViewContentModeScaleAspectFill;
     
     
     
+    self.imageView.userInteractionEnabled = YES;
     
+    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
+    [self.imageView addGestureRecognizer:panRecognizer];
+    
+//    UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
+//    [self.imageView addGestureRecognizer:pinchRecognizer];
+//    
+//    UIRotationGestureRecognizer *rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationDetected:)];
+//    [self.imageView addGestureRecognizer:rotationRecognizer];
+//    
+//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+//    tapRecognizer.numberOfTapsRequired = 2;
+//    [self.imageView addGestureRecognizer:tapRecognizer];
+    
+}
+
+- (void)panDetected:(UIPanGestureRecognizer *)panRecognizer
+{
+    
+    CGPoint translation = [panRecognizer translationInView:self.view];
+    CGPoint imageViewPosition = self.imageView.center;
+    
+    NSLog(@"loc : %f ,%f",translation.x,translation.y);
+    
+//    imageViewPosition.x += translation.x;
+//    imageViewPosition.y += translation.y;
+//    
+//    self.imageView.center = imageViewPosition;
+//    [panRecognizer setTranslation:CGPointZero inView:self.view];
+}
+
+- (void)pinchDetected:(UIPinchGestureRecognizer *)pinchRecognizer
+{
+    CGFloat scale = pinchRecognizer.scale;
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, scale, scale);
+    pinchRecognizer.scale = 1.0;
+}
+
+- (void)rotationDetected:(UIRotationGestureRecognizer *)rotationRecognizer
+{
+    CGFloat angle = rotationRecognizer.rotation;
+    self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, angle);
+    rotationRecognizer.rotation = 0.0;
+}
+
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.imageView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+        self.imageView.transform = CGAffineTransformIdentity;
+    }];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -63,7 +114,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
   
 
-    self.image.image=image;
+    self.imageView.image=image;
     oldImage=image;
     
     
@@ -71,7 +122,7 @@
 
 - (IBAction)btnF0:(UIButton *)sender
 {
-    self.image.image=oldImage;
+    self.imageView.image=oldImage;
 }
 
 - (IBAction)btnF1:(UIButton *)sender
@@ -79,7 +130,7 @@
     NSLog(@"press");
     
     const CGFloat colorMasking[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-    self.image.image = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(self.image.image.CGImage, colorMasking)];
+    self.imageView.image = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(self.imageView.image.CGImage, colorMasking)];
     
     if(SYSTEM_VERSION_GREATER_THAN(@"7.2"))
     {
@@ -97,23 +148,24 @@
 - (IBAction)btnF2:(UIButton *)sender
 {
     const CGFloat colorMasking[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-    self.image.image = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(self.image.image.CGImage, colorMasking)];
+    self.imageView.image = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(self.imageView.image.CGImage, colorMasking)];
 }
 
 - (IBAction)btnF3:(UIButton *)sender
 {
-    self.image.image=self.imageWithChromaKeyMasking;
+    self.imageView.image=self.imageWithChromaKeyMasking;
 }
 
 - (IBAction)btnF4:(UIButton *)sender
 {
+    
     UIColor *color=[[UIColor alloc]initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-    self.image.image=[self replaceColor:color inImage:self.image.image withTolerance:0.3];
+    self.imageView.image=[self replaceColor:color inImage:self.imageView.image withTolerance:0.3];
 }
 
 - (IBAction)btnF5:(UIButton *)sender
 {
-    CIImage *inputImg=[[CIImage alloc]initWithImage:self.image.image];
+    CIImage *inputImg=[[CIImage alloc]initWithImage:self.imageView.image];
     // 將圖片套用黑白濾鏡
     CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"];
     [filter setDefaults];
@@ -123,16 +175,16 @@
     CIImage *outputImg = [filter outputImage];
     // 將照片轉為UIImage 格式
     CIContext *context = [CIContext contextWithOptions:nil];
-    self.image.image = [UIImage imageWithCGImage: [context createCGImage:outputImg fromRect:outputImg.extent]];
+    self.imageView.image = [UIImage imageWithCGImage: [context createCGImage:outputImg fromRect:outputImg.extent]];
 }
 
 - (UIImage *)imageWithChromaKeyMasking {
     const CGFloat colorMasking[6]={255.0,255.0,255.0,255.0,255.0,255.0};
-    CGImageRef oldImage = self.image.image.CGImage;
+    CGImageRef oldImage = self.imageView.image.CGImage;
     CGBitmapInfo oldInfo = CGImageGetBitmapInfo(oldImage);
     CGBitmapInfo newInfo = (oldInfo & (UINT32_MAX ^ kCGBitmapAlphaInfoMask)) | kCGImageAlphaNoneSkipLast;
     CGDataProviderRef provider = CGImageGetDataProvider(oldImage);
-    CGImageRef newImage = CGImageCreate(self.image.frame.size.width,self.image.frame.size.height, CGImageGetBitsPerComponent(oldImage), CGImageGetBitsPerPixel(oldImage), CGImageGetBytesPerRow(oldImage), CGImageGetColorSpace(oldImage), newInfo, provider, NULL, false, kCGRenderingIntentDefault);
+    CGImageRef newImage = CGImageCreate(self.imageView.frame.size.width,self.imageView.frame.size.height, CGImageGetBitsPerComponent(oldImage), CGImageGetBitsPerPixel(oldImage), CGImageGetBytesPerRow(oldImage), CGImageGetColorSpace(oldImage), newInfo, provider, NULL, false, kCGRenderingIntentDefault);
     CGDataProviderRelease(provider); provider = NULL;
     CGImageRef im = CGImageCreateWithMaskingColors(newImage, colorMasking);
     UIImage *ret = [UIImage imageWithCGImage:im];
@@ -229,7 +281,7 @@
     }
     else if([sFnName isEqualToString:@"fn1"])
     {
-       UIColor *color= [self pixelColorInImage:self.image.image atX:0 atY:10];
+       UIColor *color= [self pixelColorInImage:self.imageView.image atX:0 atY:10];
    
     }
     
@@ -246,7 +298,7 @@
         filterMode=@"CIColorMonochrome";
     }
     
-    CIImage *inputImg=[[CIImage alloc]initWithImage:self.image.image];
+    CIImage *inputImg=[[CIImage alloc]initWithImage:self.imageView.image];
     // 將圖片套用黑白濾鏡
     CIFilter *filter = [CIFilter filterWithName:filterMode];
     [filter setDefaults];
@@ -256,7 +308,7 @@
     CIImage *outputImg = [filter outputImage];
     // 將照片轉為UIImage 格式
     CIContext *context = [CIContext contextWithOptions:nil];
-    self.image.image = [UIImage imageWithCGImage: [context createCGImage:outputImg fromRect:outputImg.extent]];
+    self.imageView.image = [UIImage imageWithCGImage: [context createCGImage:outputImg fromRect:outputImg.extent]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -267,134 +319,6 @@
 
 
 
-
-//
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    UITouch *touch = [[touches allObjects] objectAtIndex:0];
-//    CGPoint point1 = [touch locationInView:self.view];
-//    touch = [[event allTouches] anyObject];
-//    NSLog(@"ABCCCCCC");
-//    if ([touch view] == self.image)
-//    {
-//        CGPoint location = [touch locationInView:imgZoneWheel];
-//        [self getPixelColorAtLocation:location];
-//        if(alpha==255)
-//        {
-//            NSLog(@"In Image Touch view alpha %d",alpha);
-//            [self translateCurrentTouchPoint:point1.x :point1.y];
-//            [imgZoneWheel setImage:[UIImage imageNamed:[NSString stringWithFormat:@"blue%d.png",GrndFild]]];
-//        }
-//    }
-//}
-
-//
-//
-//- (UIColor*) getPixelColorAtLocation:(CGPoint)point
-//{
-//    
-//    UIColor* color = nil;
-//    
-//    CGImageRef inImage;
-//    
-//    inImage = imgZoneWheel.image.CGImage;
-//    
-//    
-//    // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
-//    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
-//    if (cgctx == NULL) { return nil; /* error */ }
-//    
-//    size_t w = CGImageGetWidth(inImage);
-//    size_t h = CGImageGetHeight(inImage);
-//    CGRect rect = {{0,0},{w,h}};
-//    
-//    
-//    // Draw the image to the bitmap context. Once we draw, the memory
-//    // allocated for the context for rendering will then contain the
-//    // raw image data in the specified color space.
-//    CGContextDrawImage(cgctx, rect, inImage);
-//    
-//    // Now we can get a pointer to the image data associated with the bitmap
-//    // context.
-//    unsigned char* data = CGBitmapContextGetData (cgctx);
-//    if (data != NULL) {
-//        //offset locates the pixel in the data from x,y.
-//        //4 for 4 bytes of data per pixel, w is width of one row of data.
-//        int offset = 4*((w*round(point.y))+round(point.x));
-//        alpha =  data[offset];
-//        int red = data[offset+1];
-//        int green = data[offset+2];
-//        int blue = data[offset+3];
-//        color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
-//    }
-//    
-//    // When finished, release the context
-//    //CGContextRelease(cgctx);
-//    // Free image data memory for the context
-//    if (data) { free(data); }
-//    
-//    return color;
-//}
-//
-//- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef)inImage
-//{
-//    CGContextRef    context = NULL;
-//    CGColorSpaceRef colorSpace;
-//    void *          bitmapData;
-//    int             bitmapByteCount;
-//    int             bitmapBytesPerRow;
-//    
-//    // Get image width, height. We'll use the entire image.
-//    size_t pixelsWide = CGImageGetWidth(inImage);
-//    size_t pixelsHigh = CGImageGetHeight(inImage);
-//    
-//    // Declare the number of bytes per row. Each pixel in the bitmap in this
-//    // example is represented by 4 bytes; 8 bits each of red, green, blue, and
-//    // alpha.
-//    bitmapBytesPerRow   = (pixelsWide * 4);
-//    bitmapByteCount     = (bitmapBytesPerRow * pixelsHigh);
-//    
-//    // Use the generic RGB color space.
-//    colorSpace = CGColorSpaceCreateDeviceRGB();
-//    
-//    if (colorSpace == NULL)
-//    {
-//        fprintf(stderr, "Error allocating color space\n");
-//        return NULL;
-//    }
-//    
-//    // Allocate memory for image data. This is the destination in memory
-//    // where any drawing to the bitmap context will be rendered.
-//    bitmapData = malloc( bitmapByteCount );
-//    if (bitmapData == NULL)
-//    {
-//        fprintf (stderr, "Memory not allocated!");
-//        CGColorSpaceRelease( colorSpace );
-//        return NULL;
-//    }
-//    
-//    // Create the bitmap context. We want pre-multiplied ARGB, 8-bits
-//    // per component. Regardless of what the source image format is
-//    // (CMYK, Grayscale, and so on) it will be converted over to the format
-//    // specified here by CGBitmapContextCreate.
-//    context = CGBitmapContextCreate (bitmapData,
-//                                     pixelsWide,
-//                                     pixelsHigh,
-//                                     8,      // bits per component
-//                                     bitmapBytesPerRow,
-//                                     colorSpace,
-//                                     kCGImageAlphaPremultipliedFirst);
-//    if (context == NULL)
-//    {
-//        free (bitmapData);
-//        fprintf (stderr, "Context not created!");
-//    }
-//    
-//    // Make sure and release colorspace before returning
-//    CGColorSpaceRelease( colorSpace );
-//    
-//    return context;
-//}
 
 - (UIColor*)pixelColorInImage:(UIImage*)image atX:(int)x atY:(int)y
 {
@@ -415,6 +339,41 @@
                             blue:blue/255.0f
                            alpha:alpha/255.0f];
 }
+
+
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    
+//    
+//    UITouch *touch = [touches anyObject];
+//    CGPoint location = [touch locationInView:self.view];
+//    
+//    
+//    NSLog(@"loc : %f  ,  %f ",location.x,location.y);
+//    
+//    //self.image.image = [self eraseImageAtPoint:location inImageView:self.image  fromEraser:eraserImg];
+//    
+//    
+//    
+//}
+//
+//
+//
+//- (UIImage *)eraseImageAtPoint: (CGPoint)point inImageView: (UIImageView *)imgView fromEraser: (UIImage *)eraser
+//{
+//    UIGraphicsBeginImageContext(imgView.frame.size);
+//    
+//   // [self drawInRect:CGRectMake(0, 0, imgView.frame.size.width, imgView.frame.size.height)];
+//    
+//    [eraser drawAtPoint:point blendMode:kCGBlendModeDestinationOut alpha:1.0];
+//    
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    return image;
+//    
+//}
+
 
 
 @end

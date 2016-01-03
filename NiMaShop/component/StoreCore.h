@@ -46,6 +46,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer;
+
 -(void) setClothing;
 
 -(void) addTheme:(UIImage*)image count:(int)iNums;

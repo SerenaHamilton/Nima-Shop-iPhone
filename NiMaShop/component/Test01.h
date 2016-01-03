@@ -14,7 +14,7 @@
     UIImage *oldImage;
 }
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
@@ -28,4 +28,7 @@
 
 - (UIColor*)pixelColorInImage:(UIImage*)image atX:(int)x atY:(int)y;
 
+- (UIImage *)eraseImageAtPoint: (CGPoint)point inImageView: (UIImageView *)imgView fromEraser: (UIImage *)eraser;
+
+- (void)panDetected:(UIPanGestureRecognizer *)panRecognizer;
 @end

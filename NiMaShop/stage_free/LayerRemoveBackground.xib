@@ -3,10 +3,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LayerRemoveBackground">
             <connections>
+                <outlet property="btnEraser" destination="jFk-gA-q7V" id="Jai-Bh-dWG"/>
+                <outlet property="btnPreImage" destination="gy5-cO-o97" id="pGW-b2-g8U"/>
+                <outlet property="btnRemoveBg" destination="AkL-at-HtE" id="JkE-Ot-Tr5"/>
+                <outlet property="lbEraser" destination="Odg-Wa-GCk" id="8Gv-CF-G8d"/>
+                <outlet property="lbPre" destination="ZD8-hk-O9x" id="dLU-ap-Rj8"/>
+                <outlet property="lbRemoveBg" destination="1G5-E5-5Id" id="9mR-GF-cyc"/>
+                <outlet property="scrollView" destination="xPF-TH-JU0" id="67S-xZ-lgd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="szw-Qa-9Ov"/>
             </connections>
         </placeholder>
@@ -15,33 +23,129 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPF-TH-JU0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
-                </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMQ-Bb-bdc">
-                    <rect key="frame" x="300" y="64" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLG-BX-ORe">
                     <rect key="frame" x="0.0" y="603" width="375" height="64"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-cO-o97">
-                            <rect key="frame" x="8" y="17" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-cO-o97">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gy5-cO-o97" secondAttribute="height" multiplier="1:1" id="Tfv-Yk-itD"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="imageEdgeInsets" minX="15" minY="10" maxX="15" maxY="20"/>
+                            <state key="normal" image="recover2"/>
+                            <state key="highlighted">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="focused" image="recover1"/>
+                            <connections>
+                                <action selector="btnFnPress:" destination="-1" eventType="touchUpInside" id="49k-RL-hr1"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFk-gA-q7V">
-                            <rect key="frame" x="62" y="17" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFk-gA-q7V">
+                            <rect key="frame" x="64" y="0.0" width="64" height="64"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="imageEdgeInsets" minX="15" minY="10" maxX="15" maxY="20"/>
+                            <state key="normal" title="Button" image="eraser2"/>
+                            <state key="selected" image="eraser1"/>
+                            <connections>
+                                <action selector="btnFnPress:" destination="-1" eventType="touchUpInside" id="cOA-Vl-GzT"/>
+                            </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkL-at-HtE">
+                            <rect key="frame" x="128" y="0.0" width="64" height="64"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="imageEdgeInsets" minX="15" minY="10" maxX="15" maxY="20"/>
+                            <state key="normal" image="keyer_effects2"/>
+                            <state key="selected" image="keyer_effects1">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnFnPress:" destination="-1" eventType="touchUpInside" id="fE3-nC-Kr6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMQ-Bb-bdc">
+                            <rect key="frame" x="285" y="0.0" width="80" height="64"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="done"/>
+                            <connections>
+                                <action selector="btnClosePress:" destination="-1" eventType="touchUpInside" id="DFm-A6-0Uy"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odg-Wa-GCk">
+                            <rect key="frame" x="64" y="43" width="64" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-E5-5Id">
+                            <rect key="frame" x="128" y="43" width="64" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD8-hk-O9x">
+                            <rect key="frame" x="0.0" y="44" width="64" height="20"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="lqr-0u-3Xj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="AkL-at-HtE" firstAttribute="height" secondItem="jFk-gA-q7V" secondAttribute="height" id="11h-co-g3P"/>
+                        <constraint firstItem="AkL-at-HtE" firstAttribute="leading" secondItem="jFk-gA-q7V" secondAttribute="trailing" id="1ww-ix-AX7"/>
+                        <constraint firstItem="ZD8-hk-O9x" firstAttribute="leading" secondItem="eLG-BX-ORe" secondAttribute="leading" id="8E4-EF-FfX"/>
+                        <constraint firstAttribute="bottom" secondItem="Odg-Wa-GCk" secondAttribute="bottom" id="Cw7-gr-AzQ"/>
+                        <constraint firstItem="gy5-cO-o97" firstAttribute="top" secondItem="eLG-BX-ORe" secondAttribute="top" id="HAb-6g-XeS"/>
+                        <constraint firstItem="jFk-gA-q7V" firstAttribute="leading" secondItem="gy5-cO-o97" secondAttribute="trailing" id="HqE-oe-JcE"/>
+                        <constraint firstItem="jFk-gA-q7V" firstAttribute="top" secondItem="gy5-cO-o97" secondAttribute="top" id="Hsg-Ys-Azh"/>
+                        <constraint firstAttribute="bottom" secondItem="gy5-cO-o97" secondAttribute="bottom" id="QE6-LV-7xB"/>
+                        <constraint firstAttribute="bottom" secondItem="1G5-E5-5Id" secondAttribute="bottom" id="RS9-2v-iYz"/>
+                        <constraint firstItem="AkL-at-HtE" firstAttribute="width" secondItem="jFk-gA-q7V" secondAttribute="width" id="SZ1-qa-auL"/>
+                        <constraint firstItem="AkL-at-HtE" firstAttribute="top" secondItem="jFk-gA-q7V" secondAttribute="top" id="VIM-hS-Uc2"/>
+                        <constraint firstItem="ZD8-hk-O9x" firstAttribute="width" secondItem="gy5-cO-o97" secondAttribute="width" id="WKF-gE-Rai"/>
+                        <constraint firstAttribute="bottom" secondItem="ZD8-hk-O9x" secondAttribute="bottom" id="Xd1-LY-lsm"/>
+                        <constraint firstItem="gy5-cO-o97" firstAttribute="leading" secondItem="eLG-BX-ORe" secondAttribute="leading" id="YDb-2P-fNh"/>
+                        <constraint firstItem="Odg-Wa-GCk" firstAttribute="leading" secondItem="gy5-cO-o97" secondAttribute="trailing" id="YI5-oj-G5r"/>
+                        <constraint firstItem="jFk-gA-q7V" firstAttribute="width" secondItem="gy5-cO-o97" secondAttribute="width" id="ePM-rX-2cE"/>
                         <constraint firstAttribute="height" constant="64" id="m4i-Bx-VHH"/>
+                        <constraint firstItem="1G5-E5-5Id" firstAttribute="height" secondItem="Odg-Wa-GCk" secondAttribute="height" id="rjP-Q0-qnc"/>
+                        <constraint firstItem="Odg-Wa-GCk" firstAttribute="width" secondItem="jFk-gA-q7V" secondAttribute="width" id="uAi-Ge-wNW"/>
+                        <constraint firstItem="jFk-gA-q7V" firstAttribute="height" secondItem="gy5-cO-o97" secondAttribute="height" id="ujB-aw-dDu"/>
+                        <constraint firstItem="1G5-E5-5Id" firstAttribute="leading" secondItem="Odg-Wa-GCk" secondAttribute="trailing" id="wxg-MP-Zj4"/>
+                        <constraint firstItem="1G5-E5-5Id" firstAttribute="width" secondItem="AkL-at-HtE" secondAttribute="width" id="xC5-sf-NoQ"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-08-di3">
+                    <rect key="frame" x="0.0" y="62" width="375" height="477"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="xPF-TH-JU0">
+                    <rect key="frame" x="0.0" y="62" width="375" height="477"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="4QB-9n-WYc"/>
+                    </connections>
+                </scrollView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="QOK-2z-8Jc">
+                    <rect key="frame" x="85" y="547" width="204" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="645-KL-GQd"/>
+                        <constraint firstAttribute="width" constant="200" id="Qr9-mW-lba"/>
+                    </constraints>
+                    <connections>
+                        <action selector="slider:" destination="-1" eventType="valueChanged" id="zWr-hC-i1C"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="QOK-2z-8Jc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CCX-yz-DWH"/>
+                <constraint firstItem="eLG-BX-ORe" firstAttribute="top" secondItem="QOK-2z-8Jc" secondAttribute="bottom" constant="20" id="VVq-Z9-Pgt"/>
                 <constraint firstItem="eLG-BX-ORe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Y5N-db-w1B"/>
                 <constraint firstAttribute="trailing" secondItem="eLG-BX-ORe" secondAttribute="trailing" id="siy-qJ-UcO"/>
                 <constraint firstAttribute="bottom" secondItem="eLG-BX-ORe" secondAttribute="bottom" id="yqQ-Sh-tmi"/>
@@ -50,4 +154,13 @@
             <point key="canvasLocation" x="292.5" y="369.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg_transparent" width="128" height="128"/>
+        <image name="eraser1" width="128" height="128"/>
+        <image name="eraser2" width="128" height="128"/>
+        <image name="keyer_effects1" width="128" height="128"/>
+        <image name="keyer_effects2" width="128" height="128"/>
+        <image name="recover1" width="128" height="128"/>
+        <image name="recover2" width="128" height="128"/>
+    </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C0048A71C34CE360003ACEB /* ItemScaleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0048A61C34CE360003ACEB /* ItemScaleImage.m */; };
+		9C0048AA1C34D0D60003ACEB /* Test02.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0048A91C34D0D60003ACEB /* Test02.m */; };
 		9C0315F71C045F24008058AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0315F61C045F24008058AB /* main.m */; };
 		9C0315FA1C045F24008058AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0315F91C045F24008058AB /* AppDelegate.m */; };
 		9C0315FD1C045F24008058AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0315FC1C045F24008058AB /* ViewController.m */; };
@@ -43,7 +45,6 @@
 		9C2E4A461C1AA0EB001BD308 /* StageSlideBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A3E1C1AA0EB001BD308 /* StageSlideBase.m */; };
 		9C2E4A471C1AA0EB001BD308 /* StoreCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A401C1AA0EB001BD308 /* StoreCore.m */; };
 		9C2E4A481C1AA0EB001BD308 /* Test01.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A421C1AA0EB001BD308 /* Test01.m */; };
-		9C2E4A491C1AA0EB001BD308 /* Test02.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E4A441C1AA0EB001BD308 /* Test02.m */; };
 		9C4CFAF41C0705F5008810CB /* StageShopIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CFAF31C0705F5008810CB /* StageShopIndex.m */; };
 		9CFFCF241C1139A00022CCE2 /* FacebookLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF191C1139A00022CCE2 /* FacebookLink.m */; };
 		9CFFCF251C1139A00022CCE2 /* ServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCF1C1C1139A00022CCE2 /* ServerSocket.m */; };
@@ -66,6 +67,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9C0048A51C34CE360003ACEB /* ItemScaleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemScaleImage.h; sourceTree = "<group>"; };
+		9C0048A61C34CE360003ACEB /* ItemScaleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemScaleImage.m; sourceTree = "<group>"; };
+		9C0048A81C34D0D60003ACEB /* Test02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test02.h; sourceTree = "<group>"; };
+		9C0048A91C34D0D60003ACEB /* Test02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test02.m; sourceTree = "<group>"; };
 		9C0315F21C045F24008058AB /* NiMaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiMaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0315F61C045F24008058AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C0315F81C045F24008058AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,8 +138,6 @@
 		9C2E4A401C1AA0EB001BD308 /* StoreCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreCore.m; sourceTree = "<group>"; };
 		9C2E4A411C1AA0EB001BD308 /* Test01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test01.h; sourceTree = "<group>"; };
 		9C2E4A421C1AA0EB001BD308 /* Test01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test01.m; sourceTree = "<group>"; };
-		9C2E4A431C1AA0EB001BD308 /* Test02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test02.h; sourceTree = "<group>"; };
-		9C2E4A441C1AA0EB001BD308 /* Test02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test02.m; sourceTree = "<group>"; };
 		9C4CFAF21C0705F5008810CB /* StageShopIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageShopIndex.h; path = stage_login/StageShopIndex.h; sourceTree = "<group>"; };
 		9C4CFAF31C0705F5008810CB /* StageShopIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageShopIndex.m; path = stage_login/StageShopIndex.m; sourceTree = "<group>"; };
 		9CFFCF181C1139A00022CCE2 /* FacebookLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLink.h; sourceTree = "<group>"; };
@@ -356,14 +359,16 @@
 				9C2E4A401C1AA0EB001BD308 /* StoreCore.m */,
 				9C2E4A411C1AA0EB001BD308 /* Test01.h */,
 				9C2E4A421C1AA0EB001BD308 /* Test01.m */,
-				9C2E4A431C1AA0EB001BD308 /* Test02.h */,
-				9C2E4A441C1AA0EB001BD308 /* Test02.m */,
 				9C099A401C17CF0600F40CC9 /* ItemCell.h */,
 				9C099A411C17CF0600F40CC9 /* ItemCell.m */,
 				9C099A431C17CF3000F40CC9 /* ItemStickView.h */,
 				9C099A441C17CF3000F40CC9 /* ItemStickView.m */,
 				9C099A461C17D80400F40CC9 /* TestStickViewController.h */,
 				9C099A471C17D80400F40CC9 /* TestStickViewController.m */,
+				9C0048A51C34CE360003ACEB /* ItemScaleImage.h */,
+				9C0048A61C34CE360003ACEB /* ItemScaleImage.m */,
+				9C0048A81C34D0D60003ACEB /* Test02.h */,
+				9C0048A91C34D0D60003ACEB /* Test02.m */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 				9CFFCF281C1139A00022CCE2 /* WebService.m in Sources */,
 				9CFFCF261C1139A00022CCE2 /* Socket.m in Sources */,
 				9C032E141C06D6D0007E0AF7 /* StageRegist.m in Sources */,
+				9C0048A71C34CE360003ACEB /* ItemScaleImage.m in Sources */,
 				9CFFCF271C1139A00022CCE2 /* SocketLib.m in Sources */,
 				9C1A90541C0BEC4300380566 /* StageAgree.m in Sources */,
 				9CFFCF241C1139A00022CCE2 /* FacebookLink.m in Sources */,
@@ -491,13 +497,13 @@
 				9C0316031C045F24008058AB /* NiMaShop.xcdatamodeld in Sources */,
 				9C032E1A1C06DF80007E0AF7 /* StageCheckUser.m in Sources */,
 				9C2E4A461C1AA0EB001BD308 /* StageSlideBase.m in Sources */,
+				9C0048AA1C34D0D60003ACEB /* Test02.m in Sources */,
 				9C099A451C17CF3000F40CC9 /* ItemStickView.m in Sources */,
 				9C0899101C08610E003CA28E /* StageBooking.m in Sources */,
 				9C4CFAF41C0705F5008810CB /* StageShopIndex.m in Sources */,
 				9C0898FE1C085A1B003CA28E /* StageMakeTable.m in Sources */,
 				9C03161D1C046361008058AB /* StageStart.m in Sources */,
 				9C0899091C085B54003CA28E /* StageHistory.m in Sources */,
-				9C2E4A491C1AA0EB001BD308 /* Test02.m in Sources */,
 				9C04FA4D1C05BB520057C7DF /* StageInto.m in Sources */,
 				9C032E171C06D6E2007E0AF7 /* StageLogin.m in Sources */,
 				9C0315FD1C045F24008058AB /* ViewController.m in Sources */,
@@ -637,7 +643,7 @@
 					"$(PROJECT_DIR)/3rd/FacebookSDK",
 				);
 				INFOPLIST_FILE = NiMaShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RogerProject.NiMaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -657,7 +663,7 @@
 					"$(PROJECT_DIR)/3rd/FacebookSDK",
 				);
 				INFOPLIST_FILE = NiMaShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RogerProject.NiMaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";

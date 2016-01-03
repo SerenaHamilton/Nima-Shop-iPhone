@@ -2,7 +2,7 @@
 //  Test02.m
 //  NiMaShop
 //
-//  Created by 陳晁偉 on 2015/11/30.
+//  Created by 陳晁偉 on 2015/12/31.
 //  Copyright © 2015年 RogerChen. All rights reserved.
 //
 
@@ -17,14 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.imageView initImage];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 /*
 #pragma mark - Navigation

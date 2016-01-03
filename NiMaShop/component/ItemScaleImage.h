@@ -1,5 +1,5 @@
 //
-//  Test02.h
+//  ItemScaleImage.h
 //  NiMaShop
 //
 //  Created by 陳晁偉 on 2015/12/31.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemScaleImage.h"
-@interface Test02 : UIViewController
-@property (strong, nonatomic) IBOutlet ItemScaleImage *imageView;
 
+@interface ItemScaleImage : UIImageView
+
+-(void) initImage;
 @end

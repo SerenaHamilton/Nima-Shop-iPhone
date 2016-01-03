@@ -23,6 +23,18 @@
     [self addBtn:@"icon_text"];
     [self addBtn:@"icon_stamp"];
     
+    m_layerRm= [[LayerRemoveBackground alloc]init];
+    
+    [self.view addSubview:m_layerRm.view];
+    
+    m_layerRm.view.hidden=true;
+    
+    imageNowEdit=nil;
+    UIImageView *imageView=[[UIImageView alloc]init];
+    imageView.contentMode=UIViewContentModeScaleAspectFit;
+    stickerView = [[ItemStickView alloc] initWithContentView:imageView];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,9 +80,10 @@
 {
     
     imageNowEdit=[info valueForKey:UIImagePickerControllerOriginalImage];
-    UIImageView *testView=[[UIImageView alloc] initWithImage:imageNowEdit];
+  //  UIImageView *imageView=[[UIImageView alloc] initWithImage:imageNowEdit];
+   //
     [self dismissViewControllerAnimated:YES completion:nil];
-    stickerView = [[ItemStickView alloc] initWithContentView:testView];
+    stickerView.contentView.image =imageNowEdit ;
     stickerView.center = self.view.center;
     stickerView.delegate = self;
     stickerView.outlineBorderColor = [UIColor blueColor];
@@ -79,7 +92,7 @@
     [stickerView setImage:[UIImage imageNamed:@"flip"] forHandler:HandlerFlip];
     [stickerView setHandlerSize:35];
     stickerView.frame=CGRectMake((self.view.frame.size.width-300)/2, 100, 300, 300);
-
+    
     [self.view addSubview:stickerView];
     
     self.selectedView = stickerView;
@@ -89,9 +102,21 @@
 
 -(void)editRemoveBackground;
 {
-    LayerRemoveBackground *layerRm= [[LayerRemoveBackground alloc]init];
-
-    [self.view addSubview:layerRm.view];
+    
+  //  [stickerView setShowEditingHandlers:false];
+//    super.selectedView=nil;
+    
+    if (imageNowEdit==nil)
+    {
+        return;
+    }
+    
+    [m_layerRm setImage:imageNowEdit];
+    
+    [self.view bringSubviewToFront:m_layerRm.view];
+    
+   // self.navigationController.navigationBar.hidden=true;
+    m_layerRm.view.hidden=false;
 }
 
 @end

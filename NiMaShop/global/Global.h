@@ -55,6 +55,8 @@
 
 +(UIImage*) sticker :(UIImage*)image atIndex:(NSInteger)idx;
 
++ (CGSize) getImageSizeAfterAspectFit:(UIImageView *) imageView ;
+
 @end
 
 

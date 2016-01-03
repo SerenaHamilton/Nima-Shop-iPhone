@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jF6-3n-e73">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EEe-gi-iwu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -297,6 +297,43 @@
             </objects>
             <point key="canvasLocation" x="-1103" y="6225"/>
         </scene>
+        <!--Test02-->
+        <scene sceneID="aaW-si-Ozt">
+            <objects>
+                <viewController id="nx3-kP-rub" customClass="Test02" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DaN-Wj-WXh"/>
+                        <viewControllerLayoutGuide type="bottom" id="iTa-L0-Wje"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="usb-v0-7Kt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhV-M3-JEb">
+                                <rect key="frame" x="26" y="34" width="232" height="396"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="seco1" translatesAutoresizingMaskIntoConstraints="NO" id="PbQ-JC-U3P" customClass="ItemScaleImage">
+                                        <rect key="frame" x="0.0" y="8" width="240" height="350"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvS-3C-ae5">
+                                <rect key="frame" x="0.0" y="444" width="312" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="PbQ-JC-U3P" id="Z72-hw-SZX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7R-5i-Gtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-924.5" y="4478.5"/>
+        </scene>
         <!--Test01-->
         <scene sceneID="CGL-OQ-CCs">
             <objects>
@@ -422,7 +459,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnFn" destination="0H1-bo-rqf" id="v3M-CG-Vg1"/>
-                        <outlet property="image" destination="cYq-9z-xuJ" id="xyZ-2C-PKt"/>
+                        <outlet property="imageView" destination="cYq-9z-xuJ" id="DjT-fY-ire"/>
                         <outlet property="scrollview" destination="FBI-Te-xtG" id="leu-Js-56F"/>
                         <outlet property="txtFnName" destination="TTB-TR-Zhp" id="RcN-lY-lfo"/>
                         <outlet property="txtFnValue" destination="ZGo-Z6-y8g" id="gte-kX-gup"/>
@@ -1464,7 +1501,7 @@ D.    轉由廠商出貨。
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb4-fW-kUf">
-                                <rect key="frame" x="36" y="71" width="87" height="20.5"/>
+                                <rect key="frame" x="36" y="28.5" width="87" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="7Mo-q3-OO2"/>
                                 </constraints>
@@ -1473,12 +1510,17 @@ D.    轉由廠商出貨。
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jb4-fW-kUf" firstAttribute="leading" secondItem="RsD-rf-Yl6" secondAttribute="leadingMargin" constant="20" id="5jT-bR-gDm"/>
                             <constraint firstItem="jb4-fW-kUf" firstAttribute="top" secondItem="d57-Bf-CeS" secondAttribute="bottom" constant="51" id="AvX-yD-q3r"/>
                             <constraint firstItem="RRl-B3-ZBM" firstAttribute="top" secondItem="jb4-fW-kUf" secondAttribute="bottom" constant="618" id="X06-pA-dt3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AvX-yD-q3r"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="vUg-S9-fmp">
                         <barButtonItem key="leftBarButtonItem" title="back" id="rTR-zV-OQi"/>
@@ -1981,6 +2023,7 @@ D.    轉由廠商出貨。
         <image name="makeTable" width="1242" height="2208"/>
         <image name="nimaLogo3" width="302" height="131"/>
         <image name="seco0" width="600" height="900"/>
+        <image name="seco1" width="600" height="900"/>
         <image name="sizeTable" width="351" height="1107"/>
         <image name="testRemoveBg0" width="852" height="1608"/>
         <image name="wechat" width="92" height="94"/>

@@ -13,6 +13,7 @@
 {
     ItemStickView *stickerView;
     UIImage *imageNowEdit;
+    LayerRemoveBackground *m_layerRm;
 }
 -(void)editRemoveBackground;
 @end

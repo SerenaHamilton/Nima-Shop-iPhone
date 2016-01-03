@@ -178,4 +178,6 @@ static NSBundle *g_bundle;
     return copiedImage;
 }
 
++ (CGSize) getImageSizeAfterAspectFit:(UIImageView *) imageView { float widthRatio = imageView.bounds.size.width / imageView.image.size.width; float heightRatio = imageView.bounds.size.height / imageView.image.size. height; float scale = MIN(widthRatio,heightRatio); float imageWidth = scale * imageView.image.size.width; float imageHeight = scale * imageView.image.size.height; return CGSizeMake(imageWidth,imageHeight); }
+
 @end
