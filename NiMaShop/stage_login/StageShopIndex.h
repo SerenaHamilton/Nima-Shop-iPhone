@@ -14,7 +14,11 @@
     NSMutableArray *listPickerData;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property (weak, nonatomic) IBOutlet UIPageControl *pageCtrl;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnStore;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnFreeCreat;
+
 @end

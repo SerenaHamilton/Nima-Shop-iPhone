@@ -19,8 +19,7 @@
     [super viewDidLoad];
     [self.btnStore.layer setCornerRadius:15.0];
     [self.btnFreeCreat.layer setCornerRadius:15.0];
-//    [self.btnRegist setTitle:[Global tr:@"btnRegist"] forState:UIControlStateNormal];
-//    [self.btnLogin setTitle:[Global tr:@"btnLogin"] forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning {

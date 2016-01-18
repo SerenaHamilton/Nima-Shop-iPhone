@@ -52,8 +52,6 @@
     [listImage addObject:@"seco2"];
     
 
-    
-    //製作ScrollView的內容
     for (int i=0; i<listImage.count; i++)
     {
         CGRect frame = CGRectMake(imageW*i, -64, imageW, imageH);
@@ -63,24 +61,7 @@
         [view setFrame:frame];
         [self.scrollView addSubview:view];
         
-
-//        UIView *view = [[UIView alloc]initWithFrame:frame];
-//        
-//        CGFloat r, g ,b;
-//        r = (arc4random() % 10) / 10.0;
-//        g = (arc4random() % 10) / 10.0;
-//        b = (arc4random() % 10) / 10.0;
-//        [view setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:0.3]];
-//        
-//        //使用QuartzCore.framework替UIView加上圓角
-//        [view.layer setCornerRadius:15.0];
-//        
-//        [self.scrollView addSubview:view];
     }
-    
-
-  //  _scrollView.contentOffset = CGPointMake(200, 0);
-    
     
 }
 

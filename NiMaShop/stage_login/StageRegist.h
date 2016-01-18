@@ -12,8 +12,11 @@
 
 
 @interface StageRegist : StageBase <FBSDKLoginButtonDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *viewFbButton;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end

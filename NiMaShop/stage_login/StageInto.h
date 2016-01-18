@@ -11,10 +11,15 @@
 
 
 @interface StageInto : StageBase <UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property (weak, nonatomic) IBOutlet UIPageControl *pageCtrl;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnRegist;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
+
 @property (weak, nonatomic) IBOutlet UIView *viewLogo;
 
 @end

@@ -61,7 +61,7 @@
 {
     // 先把url串好再呼 叫
     NSURL *url = [NSURL URLWithString:sUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+   // NSURLRequest *request = [NSURLRequest requestWithURL:url];
     //to do 回傳值解析
 }
 

@@ -16,7 +16,7 @@
 @interface StoreCore : StageSlideBase <UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,ItemStickViewDelegate>
 {
 
-    UIImageView *viewImage;
+    IBOutlet UIImageView *viewImage;
 
     __weak IBOutlet UIButton *btnCloth;
     __weak IBOutlet UIScrollView *scrollBtnGroup;
@@ -41,7 +41,6 @@
     NSMutableArray *listBtn;
    // NSMutableArray *dTheme;
 }
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollImage;
 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

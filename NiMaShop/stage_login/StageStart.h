@@ -7,7 +7,7 @@
 //
 
 #import "StageBase.h"
-#import "ViewController.h"
+
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface StageStart : StageBase <UIScrollViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>

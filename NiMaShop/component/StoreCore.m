@@ -26,36 +26,32 @@
     dClothView=[[NSMutableArray alloc]init];
     dTheme=[[NSMutableArray alloc]init];
     listBtn=[[NSMutableArray alloc]init];
-    [self setScrollView];
+ 
     [self setClothing];
     
     viewImage.hidden=true;
+    
+    viewImage.userInteractionEnabled=true;
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    [viewImage addGestureRecognizer:tapRecognizer];
+
     
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    UIImageView *imageView = [_scrollImage.subviews firstObject];
-    // 將 imageView 大小調整為跟 scrollView 一樣
-    imageView.frame = self.scrollImage.bounds;
-    // 取得圖片縮小後的長寬
-    CGSize size = [self getImageSizeAfterAspectFit:imageView];
-    // 將 imageView 的大小調整為圖片大小
-    imageView.frame = CGRectMake(0,0,size.width,size.height);
-    // 將 scrollView 的容器大小調整為 imageView 大小
-    _scrollImage.contentSize = imageView.frame.size;
+
     
     viewImage.hidden=false;
     
-//        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:viewImage action:@selector(tapDetected:)];
-//        tapRecognizer.numberOfTapsRequired = 1;
-     //   [self addGestureRecognizer:tapRecognizer];
+
 }
 
 - (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
 {
-    NSLog(@"A tab ");
+    self.selectedView=nil;
 }
 
 - (CGSize) getImageSizeAfterAspectFit:(UIImageView *) imageView
@@ -264,25 +260,9 @@
 }
 
 
--(void)setScrollView
-{
-    
-    viewImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"clothing1a_1"]];
-    viewImage.contentMode=UIViewContentModeScaleAspectFill;
-    [_scrollImage addSubview:viewImage];
-    [_scrollImage setDelegate:self];
-    //    [scrollImage setContentMode:UIViewContentModeScaleAspectFill];
-    //    [scrollImage setContentSize:CGSizeMake(1000,1000)];
-    //    UIImageView *happyImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HappyMan.jpg"]];
-    //    [scrollView addSubview:happyImageView];
-}
 
 
 #pragma mark - UIScrollViewDelegate
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-    return [_scrollImage.subviews objectAtIndex:0];
-}
 
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -312,7 +292,6 @@
     cell.imageView.image=[listDataProviderCollection objectAtIndex:indexPath.row];
     return cell;
 }
-
 
 
 -(void)btnGrounpClick:(UIButton*)sender
@@ -460,39 +439,13 @@
 
 -(bool) virtualBtnGruopClick:(UIButton*)sender;
 {
-    //    if ([sender.restorationIdentifier isEqualToString:@"theme1" ])
-    //    {
-    //        listDataProviderCollection=[dTheme objectAtIndex:1];
-    //        iThemeIdx=1;
-    //    }
-    //    else
-    //    {
-    //        listDataProviderCollection=[dTheme objectAtIndex:0];
-    //        iThemeIdx=0;
-    //    }
-    //
-    //
-    //    [_collectionView reloadData];
+
     return true;
 }
 
 
 -(void) virtualCellClick:(UIImageView*) imageView
 {
-    //        UIImage *image=cell.imageView.image;
-    //        UIImageView *testView=[[UIImageView alloc] initWithImage:image];
-    //        ItemStickView *stickerView = [[ItemStickView alloc] initWithContentView:testView];
-    //        stickerView.center = self.view.center;
-    //        stickerView.delegate = self;
-    //        stickerView.outlineBorderColor = [UIColor blueColor];
-    //        [stickerView setImage:[UIImage imageNamed:@"close"] forHandler:HandlerClose];
-    //        [stickerView setImage:[UIImage imageNamed:@"rotate"] forHandler:HandlerRotate];
-    //        [stickerView setImage:[UIImage imageNamed:@"flip"] forHandler:HandlerFlip];
-    //        [stickerView setHandlerSize:40];
-    //        stickerView.frame=CGRectMake((self.view.frame.size.width-200)/2, 200, 200, 200);
-    //
-    //        [self.view addSubview:stickerView];
-    //
-    //        self.selectedView = stickerView;
+
 }
 @end

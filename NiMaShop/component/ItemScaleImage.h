@@ -11,4 +11,7 @@
 @interface ItemScaleImage : UIImageView
 
 -(void) initImage;
+
+- (UIImage *)eraseImageAtPoint: (CGPoint)point inImageView: (UIImageView *)imgView fromEraser: (UIImage *)eraser;
+
 @end

@@ -9,13 +9,24 @@
 #import "StoreCore.h"
 #import "LayerRemoveBackground.h"
 
-@interface StageFree : StoreCore<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface StageFree : StoreCore<UINavigationControllerDelegate,UIImagePickerControllerDelegate,LayerRemoveBgDelegate>
 {
-    ItemStickView *stickerView;
+    UIImageView *editImageView;
     UIImage *imageNowEdit;
+    
+    float fScale;
+    
+    
+    IBOutlet UIView *borderView;
+    IBOutlet UIScrollView *scrollEditArea;
     LayerRemoveBackground *m_layerRm;
+    IBOutlet UIView *viewTempStyleArea;
 }
 -(void)editRemoveBackground;
+
+- (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage;
+
+
 @end
 
 

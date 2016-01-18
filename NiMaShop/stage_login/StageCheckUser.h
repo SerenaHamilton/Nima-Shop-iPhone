@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *viewFBbutton;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnAccount;
 
 @end

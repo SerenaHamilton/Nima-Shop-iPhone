@@ -74,25 +74,30 @@
 #import "ItemStickView.h"
 
 
-CG_INLINE CGPoint CGRectGetCenter(CGRect rect) {
+CG_INLINE CGPoint CGRectGetCenter(CGRect rect)
+{
     return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
 
-CG_INLINE CGRect CGRectScale(CGRect rect, CGFloat wScale, CGFloat hScale) {
+CG_INLINE CGRect CGRectScale(CGRect rect, CGFloat wScale, CGFloat hScale)
+{
     return CGRectMake(rect.origin.x, rect.origin.y, rect.size.width * wScale, rect.size.height * hScale);
 }
 
-CG_INLINE CGFloat CGAffineTransformGetAngle(CGAffineTransform t) {
+CG_INLINE CGFloat CGAffineTransformGetAngle(CGAffineTransform t)
+{
     return atan2(t.b, t.a);
 }
 
-CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
+CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2)
+{
     CGFloat fx = (point2.x - point1.x);
     CGFloat fy = (point2.y - point1.y);
     return sqrt((fx * fx + fy * fy));
 }
 
-@interface ItemStickView () <UIGestureRecognizerDelegate> {
+@interface ItemStickView () <UIGestureRecognizerDelegate>
+{
     /**
      *  Default value
      */
@@ -128,46 +133,58 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
 
 #pragma mark - Properties
 
-- (UIPanGestureRecognizer *)moveGesture {
-    if (!_moveGesture) {
+- (UIPanGestureRecognizer *)moveGesture
+{
+    if (!_moveGesture)
+    {
         _moveGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleMoveGesture:)];
     }
     return _moveGesture;
 }
 
-- (UIPanGestureRecognizer *)rotateGesture {
-    if (!_rotateGesture) {
+- (UIPanGestureRecognizer *)rotateGesture
+{
+    if (!_rotateGesture)
+    {
         _rotateGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotateGesture:)];
         _rotateGesture.delegate = self;
     }
     return _rotateGesture;
 }
 
-- (UITapGestureRecognizer *)closeGesture {
-    if (!_closeGesture) {
+- (UITapGestureRecognizer *)closeGesture
+{
+    if (!_closeGesture)
+    {
         _closeGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCloseGesture:)];
         _closeGesture.delegate = self;
     }
     return _closeGesture;
 }
 
-- (UITapGestureRecognizer *)flipGesture {
-    if (!_flipGesture) {
+- (UITapGestureRecognizer *)flipGesture
+{
+    if (!_flipGesture)
+    {
         _flipGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleFlipGesture:)];
         _flipGesture.delegate = self;
     }
     return _flipGesture;
 }
 
-- (UITapGestureRecognizer *)tapGesture {
-    if (!_tapGesture) {
+- (UITapGestureRecognizer *)tapGesture
+{
+    if (!_tapGesture)
+    {
         _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     }
     return _tapGesture;
 }
 
-- (UIImageView *)closeImageView {
-    if (!_closeImageView) {
+- (UIImageView *)closeImageView
+{
+    if (!_closeImageView)
+    {
         _closeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, defaultInset * 2, defaultInset * 2)];
         _closeImageView.contentMode = UIViewContentModeScaleAspectFit;
         _closeImageView.backgroundColor = [UIColor clearColor];
@@ -177,8 +194,10 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     return _closeImageView;
 }
 
-- (UIImageView *)rotateImageView {
-    if (!_rotateImageView) {
+- (UIImageView *)rotateImageView
+{
+    if (!_rotateImageView)
+    {
         _rotateImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, defaultInset * 2, defaultInset * 2)];
         _rotateImageView.contentMode = UIViewContentModeScaleAspectFit;
         _rotateImageView.backgroundColor = [UIColor clearColor];
@@ -188,8 +207,10 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     return _rotateImageView;
 }
 
-- (UIImageView *)flipImageView {
-    if (!_flipImageView) {
+- (UIImageView *)flipImageView
+{
+    if (!_flipImageView)
+    {
         _flipImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, defaultInset * 2, defaultInset * 2)];
         _flipImageView.contentMode = UIViewContentModeScaleAspectFit;
         _flipImageView.backgroundColor = [UIColor clearColor];
@@ -199,28 +220,36 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     return _flipImageView;
 }
 
-- (void)setEnableClose:(BOOL)enableClose {
+- (void)setEnableClose:(BOOL)enableClose
+{
     _enableClose = enableClose;
-    if (self.showEditingHandlers) {
+    if (self.showEditingHandlers)
+    {
         [self _setEnableClose:enableClose];
     }
 }
 
-- (void)setEnableRotate:(BOOL)enableRotate {
+- (void)setEnableRotate:(BOOL)enableRotate
+{
     _enableRotate = enableRotate;
-    if (self.showEditingHandlers) {
+    if (self.showEditingHandlers)
+    {
         [self _setEnableRotate:enableRotate];
     }
 }
 
-- (void)setShowEditingHandlers:(BOOL)showEditingHandlers {
+- (void)setShowEditingHandlers:(BOOL)showEditingHandlers
+{
     _showEditingHandlers = showEditingHandlers;
-    if (showEditingHandlers) {
+    if (showEditingHandlers)
+    {
         [self _setEnableClose:self.enableClose];
         [self _setEnableRotate:self.enableRotate];
         [self _setEnableFlip:self.enableFlip];
         self.contentView.layer.borderWidth = 2;
-    } else {
+    }
+    else
+    {
         [self _setEnableClose:NO];
         [self _setEnableRotate:NO];
         [self _setEnableFlip:NO];
@@ -228,36 +257,43 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     }
 }
 
-- (void)setMinimumSize:(NSInteger)minimumSize {
+- (void)setMinimumSize:(NSInteger)minimumSize
+{
     _minimumSize = MAX(minimumSize, defaultMinimumSize);
 }
 
-- (void)setOutlineBorderColor:(UIColor *)outlineBorderColor {
+- (void)setOutlineBorderColor:(UIColor *)outlineBorderColor
+{
     _outlineBorderColor = outlineBorderColor;
     self.contentView.layer.borderColor = _outlineBorderColor.CGColor;
 }
 
 #pragma mark - Private Methods
 
-- (void)_setEnableClose:(BOOL)enableClose {
+- (void)_setEnableClose:(BOOL)enableClose
+{
     self.closeImageView.hidden = !enableClose;
     self.closeImageView.userInteractionEnabled = enableClose;
 }
 
-- (void)_setEnableRotate:(BOOL)enableRotate {
+- (void)_setEnableRotate:(BOOL)enableRotate
+{
     self.rotateImageView.hidden = !enableRotate;
     self.rotateImageView.userInteractionEnabled = enableRotate;
 }
 
-- (void)_setEnableFlip:(BOOL)enableFlip {
+- (void)_setEnableFlip:(BOOL)enableFlip
+{
     self.flipImageView.hidden = !enableFlip;
     self.flipImageView.userInteractionEnabled = enableFlip;
 }
 
 #pragma mark - UIView
 
-- (id)initWithContentView:(UIImageView *)contentView {
-    if (!contentView) {
+- (id)initWithContentView:(UIImageView *)contentView
+{
+    if (!contentView)
+    {
         return nil;
     }
     
@@ -266,7 +302,8 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     
     CGRect frame = contentView.frame;
     frame = CGRectMake(0, 0, frame.size.width + defaultInset * 2, frame.size.height + defaultInset * 2);
-    if (self = [super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame])
+    {
         self.backgroundColor = [UIColor clearColor];
         [self addGestureRecognizer:self.moveGesture];
         [self addGestureRecognizer:self.tapGesture];
@@ -276,7 +313,8 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
         self.contentView.center = CGRectGetCenter(self.bounds);
         self.contentView.userInteractionEnabled = NO;
         self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        if ([self.contentView.layer respondsToSelector:@selector(setAllowsEdgeAntialiasing:)]) {
+        if ([self.contentView.layer respondsToSelector:@selector(setAllowsEdgeAntialiasing:)])
+        {
             [self.contentView.layer setAllowsEdgeAntialiasing:YES];
         }
         [self addSubview:self.contentView];
@@ -302,14 +340,17 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
 
 #pragma mark - Gesture Handlers
 
-- (void)handleMoveGesture:(UIPanGestureRecognizer *)recognizer {
+- (void)handleMoveGesture:(UIPanGestureRecognizer *)recognizer
+{
     CGPoint touchLocation = [recognizer locationInView:self.superview];
     
-    switch (recognizer.state) {
+    switch (recognizer.state)
+    {
         case UIGestureRecognizerStateBegan:
             beginningPoint = touchLocation;
             beginningCenter = self.center;
-            if ([self.delegate respondsToSelector:@selector(stickerViewDidBeginMoving:)]) {
+            if ([self.delegate respondsToSelector:@selector(stickerViewDidBeginMoving:)])
+            {
                 [self.delegate stickerViewDidBeginMoving:self];
             }
             break;
@@ -317,7 +358,8 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
         case UIGestureRecognizerStateChanged:
             self.center = CGPointMake(beginningCenter.x + (touchLocation.x - beginningPoint.x),
                                       beginningCenter.y + (touchLocation.y - beginningPoint.y));
-            if ([self.delegate respondsToSelector:@selector(stickerViewDidChangeMoving:)]) {
+            if ([self.delegate respondsToSelector:@selector(stickerViewDidChangeMoving:)])
+            {
                 [self.delegate stickerViewDidChangeMoving:self];
             }
             break;
@@ -325,7 +367,8 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
         case UIGestureRecognizerStateEnded:
             self.center = CGPointMake(beginningCenter.x + (touchLocation.x - beginningPoint.x),
                                       beginningCenter.y + (touchLocation.y - beginningPoint.y));
-            if ([self.delegate respondsToSelector:@selector(stickerViewDidEndMoving:)]) {
+            if ([self.delegate respondsToSelector:@selector(stickerViewDidEndMoving:)])
+            {
                 [self.delegate stickerViewDidEndMoving:self];
             }
             break;
@@ -335,22 +378,27 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     }
 }
 
-- (void)handleRotateGesture:(UIPanGestureRecognizer *)recognizer {
+- (void)handleRotateGesture:(UIPanGestureRecognizer *)recognizer
+{
     CGPoint touchLocation = [recognizer locationInView:self.superview];
     CGPoint center = self.center;
     
-    switch (recognizer.state) {
-        case UIGestureRecognizerStateBegan: {
+    switch (recognizer.state)
+    {
+        case UIGestureRecognizerStateBegan:
+        {
             deltaAngle = atan2f(touchLocation.y - center.y, touchLocation.x - center.x) - CGAffineTransformGetAngle(self.transform);
             initialBounds = self.bounds;
             initialDistance = CGPointGetDistance(center, touchLocation);
-            if ([self.delegate respondsToSelector:@selector(stickerViewDidBeginRotating:)]) {
+            if ([self.delegate respondsToSelector:@selector(stickerViewDidBeginRotating:)])
+            {
                 [self.delegate stickerViewDidBeginRotating:self];
             }
             break;
         }
             
-        case UIGestureRecognizerStateChanged: {
+        case UIGestureRecognizerStateChanged:
+        {
             float angle = atan2f(touchLocation.y - center.y, touchLocation.x - center.x);
             float angleDiff = deltaAngle - angle;
             self.transform = CGAffineTransformMakeRotation(-angleDiff);
@@ -362,14 +410,16 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
             self.bounds = scaledBounds;
             [self setNeedsDisplay];
             
-            if ([self.delegate respondsToSelector:@selector(stickerViewDidChangeRotating:)]) {
+            if ([self.delegate respondsToSelector:@selector(stickerViewDidChangeRotating:)])
+            {
                 [self.delegate stickerViewDidChangeRotating:self];
             }
             break;
         }
             
         case UIGestureRecognizerStateEnded:
-            if ([self.delegate respondsToSelector:@selector(stickerViewDidEndRotating:)]) {
+            if ([self.delegate respondsToSelector:@selector(stickerViewDidEndRotating:)])
+            {
                 [self.delegate stickerViewDidEndRotating:self];
             }
             break;
@@ -379,42 +429,45 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     }
 }
 
-- (void)handleCloseGesture:(UITapGestureRecognizer *)recognizer {
-    if ([self.delegate respondsToSelector:@selector(stickerViewDidClose:)]) {
+- (void)handleCloseGesture:(UITapGestureRecognizer *)recognizer
+{
+    if ([self.delegate respondsToSelector:@selector(stickerViewDidClose:)])
+    {
         [self.delegate stickerViewDidClose:self];
     }
     [self removeFromSuperview];
 }
 
-- (void)handleFlipGesture:(UITapGestureRecognizer *)recognizer {
-    [UIView animateWithDuration:0.3 animations:^{
+- (void)handleFlipGesture:(UITapGestureRecognizer *)recognizer
+{
+    [UIView animateWithDuration:0.3 animations:^
+    {
         self.contentView.transform = CGAffineTransformScale(self.contentView.transform, -1, 1);
     }];
 }
 
-- (void)handleTapGesture:(UITapGestureRecognizer *)recognizer {
-    if ([self.delegate respondsToSelector:@selector(stickerViewDidTap:)]) {
+- (void)handleTapGesture:(UITapGestureRecognizer *)recognizer
+{
+    if ([self.delegate respondsToSelector:@selector(stickerViewDidTap:)])
+    {
         [self.delegate stickerViewDidTap:self];
     }
 }
 
 #pragma mark - UIGestureRecognizerDelegate
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    /**
-     * ref: http://stackoverflow.com/questions/19095165/should-superviews-gesture-cancel-subviews-gesture-in-ios-7/
-     *
-     * The `gestureRecognizer` would be either closeGestureRecognizer or rotateGestureRecognizer,
-     * `otherGestureRecognizer` should work only when `gestureRecognizer` is failed.
-     * So, we always return YES here.
-     */
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+
     return YES;
 }
 
 #pragma mark - Public Methods
 
-- (void)setImage:(UIImage *)image forHandler:(ItemStickViewHandler)handler {
-    switch (handler) {
+- (void)setImage:(UIImage *)image forHandler:(ItemStickViewHandler)handler
+{
+    switch (handler)
+    {
         case HandlerClose:
             self.closeImageView.image = image;
             break;
@@ -437,7 +490,8 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     CGSize size = self.contentView.frame.size;
     UIImageView *handlerView = nil;
     
-    switch (handler) {
+    switch (handler)
+    {
         case HandlerClose:
             handlerView = self.closeImageView;
             break;
@@ -451,7 +505,8 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
             break;
     }
     
-    switch (position) {
+    switch (position)
+    {
         case PositionTopLeft:
             handlerView.center = origin;
             handlerView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
@@ -476,8 +531,10 @@ CG_INLINE CGFloat CGPointGetDistance(CGPoint point1, CGPoint point2) {
     handlerView.tag = position;
 }
 
-- (void)setHandlerSize:(NSInteger)size {
-    if (size <= 0) {
+- (void)setHandlerSize:(NSInteger)size
+{
+    if (size <= 0)
+    {
         return;
     }
     

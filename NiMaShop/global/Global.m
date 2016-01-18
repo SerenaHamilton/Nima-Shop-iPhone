@@ -38,7 +38,7 @@ static NSBundle *g_bundle;
     NSLog(@"iPhone Device: %@",g_device);
     
     
-
+    
     
 }
 
@@ -159,15 +159,15 @@ static NSBundle *g_bundle;
 
 +(UIImage*) sticker :(UIImage*)image atIndex:(NSInteger)idx
 {
-   
-//    UIImage *image=[UIImage imageNamed:sName];
-//    //UIImage *image=[WebService urlImage:@"http://image.wangchao.net.cn/baike/1256135629539.jpg"];
-
+    
+    //    UIImage *image=[UIImage imageNamed:sName];
+    //    //UIImage *image=[WebService urlImage:@"http://image.wangchao.net.cn/baike/1256135629539.jpg"];
+    
     //設定剪裁影像的位置與大小
-     int iStartX=idx%6*220;
+    int iStartX=idx%6*220;
     long int iStartY=idx/6*220;
     
-   
+    
     CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], CGRectMake(iStartX,iStartY,220,220));
     
     //剪裁影像
@@ -178,6 +178,14 @@ static NSBundle *g_bundle;
     return copiedImage;
 }
 
-+ (CGSize) getImageSizeAfterAspectFit:(UIImageView *) imageView { float widthRatio = imageView.bounds.size.width / imageView.image.size.width; float heightRatio = imageView.bounds.size.height / imageView.image.size. height; float scale = MIN(widthRatio,heightRatio); float imageWidth = scale * imageView.image.size.width; float imageHeight = scale * imageView.image.size.height; return CGSizeMake(imageWidth,imageHeight); }
++ (CGSize) getImageSizeAfterAspectFit:(UIImageView *) imageView
+{
+    float widthRatio = imageView.bounds.size.width / imageView.image.size.width;
+    float heightRatio = imageView.bounds.size.height / imageView.image.size. height;
+    float scale = MIN(widthRatio,heightRatio);
+    float imageWidth = scale * imageView.image.size.width;
+    float imageHeight = scale * imageView.image.size.height;
+    return CGSizeMake(imageWidth,imageHeight);
+}
 
 @end
